@@ -14,7 +14,7 @@
 
 <title>Calibration Processes</title>
 
-<script src="site_libs/header-attrs-2.18/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.26/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/yeti.min.css" rel="stylesheet" />
@@ -30,7 +30,7 @@
        h6 {font-size: 12px;}
        code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
        pre:not([class]) { background-color: white }</style>
-<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<script src="site_libs/jqueryui-1.13.2/jquery-ui.min.js"></script>
 <link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
 <script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
@@ -38,8 +38,8 @@
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
 <link href="site_libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet" />
 <script src="site_libs/pagedtable-1.1/js/pagedtable.js"></script>
-<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
-<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-6.4.2/css/all.min.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-6.4.2/css/v4-shims.min.css" rel="stylesheet" />
 
 <style type="text/css">
   code{white-space: pre-wrap;}
@@ -462,20 +462,30 @@ div.tocify {
 
 
 <script>
+
 MathJax = {
+
   tex: {
+
     inlineMath: [['$', '$'], ['\\(', '\\)']]
+
   },
+
   svg: {
+
     fontCache: 'global'
+
   }
+
 };
+
 </script>
 <script type="text/javascript" id="MathJax-script" async
+
   src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+
 </script>
-<p><span class="math display"> $$ Test_{i} = Foo {\times} Bar $$
-</span></p>
+<pre><code>## Warning: package &#39;knitr&#39; was built under R version 4.3.3</code></pre>
 <p>The primary purpose of a calibration pass is to create a CWT recovery
 data set that contains the number of CWT recoveries for stocks that were
 tagged in the base period with a simulated number of CWT recoveries for
@@ -544,8 +554,23 @@ time strata. These mapped CWT recoveries were then summarized in a stock
 matrix and a fishery matrix to assess whether there were sufficient raw
 un-expanded CWTs when summed over all base period years in each
 stock/fishery/time step stratum.</p>
-<p>Tablexxx. CWT Stock Inventory
-<embed src="./literature/FRAM_CWTInventorySmall_updated--updated2008Jun82015.pdf" width="800px" height="800px" type="application/pdf" /></p>
+<embed src="./literature/FRAM_CWTInventorySmall_updated--updated2008Jun82015.pdf" width="800px" height="800px" type="application/pdf" />
+<table>
+<caption style="font-size:1.5em; color:black">
+<b>Table 1</b>: CWT Stock Inventory
+</caption>
+<colgroup>
+<col width="500">
+</col>
+</colgroup>
+<thead>
+<tr class="header">
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+<p>
 <p>General status of CWT recoveries in the new base period (stock
 summary):</p>
 <ul>
@@ -554,8 +579,23 @@ stock.</p></li>
 <li><p>50/50 mix of better/worse cases for old versus new base period
 comparison; BUT all are as good or better with escapement</p></li>
 </ul>
-<p>Tablexxx. CWT Fishery Inventory
-<embed src="./literature/FRAM_CWTInventorySmall_updated--Fisheries.pdf" width="800px" height="800px" type="application/pdf" /></p>
+<embed src="./literature/FRAM_CWTInventorySmall_updated--Fisheries.pdf" width="800px" height="800px" type="application/pdf" />
+<table>
+<caption style="font-size:1.5em; color:black">
+<b>Table 2</b>: CWT Fishery Inventory
+</caption>
+<colgroup>
+<col width="500">
+</col>
+</colgroup>
+<thead>
+<tr class="header">
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+<p>
 <p>General status of CWT recoveries in the new base period (fishery
 summary):</p>
 <ul>
@@ -625,11 +665,27 @@ fisheries in the selected base period (see
 out-of-base procedures </a>). Once adjusted, these CWTs are combined
 with the “in-base” recoveries and processed.</p>
 <div class="figure">
-<img src="images/Calibration%20Overview.jpg" alt="Figurecalplotxxx Calibration Overview" width="700px" height="550px" />
+<img src="images/Calibration%20Overview.jpg" alt="Calibration Overview" width="700px" height="550px" />
 <p class="caption">
-Figurecalplotxxx Calibration Overview
+Calibration Overview
 </p>
 </div>
+<table>
+<caption style="font-size:1.5em; color:black">
+<b>Figure 1</b>: Calibration Overview
+</caption>
+<colgroup>
+<col width="500">
+</col>
+</colgroup>
+<thead>
+<tr class="header">
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+<p>
 <div id="variables-and-notation" class="section level3">
 <h3>Variables and Notation</h3>
 <ul>
@@ -700,7 +756,7 @@ Period Cohort</a> in the Data chapter.</p></li>
 length-at-age by stock and age. This is a calibration input. For more
 information see
 <a href="https://framverse.github.io/fram_doc/base_chin_doc_data.html#Growth_Functions" target="_blank">Growth
-Functions</a> in the Data chapter. <span id="CWTCatch"></span></p></li>
+Functions</a> in the Data chapter.</p></li>
 <li><p><strong>CWTCatch<sub>s,a,f,t</sub>:</strong> CWT recoveries by
 stock, age, fishery, and time step expanded for sampling fraction. This
 is a data input. For more information see
@@ -751,9 +807,8 @@ during the calibration by splitting total encounters into stocks and
 ages. For more information see
 <a href="https://framverse.github.io/fram_doc/base_chin_doc_data.html#Non_Retention_Encounters" target="_blank">Non
 Retention Encounters</a> in the Data chapter.</p></li>
-<li><p><strong>LegalProp<sub>s,a,f,t</sub>:</strong><span
-id="legal_prop_calibration"></span> Proportion of the cohort which is
-above the
+<li><p><strong>LegalProp<sub>s,a,f,t</sub>:</strong> Proportion of the
+cohort which is above the
 <a href="https://framverse.github.io/fram_doc/calcs_glossary.html#Legal-sized" target="_blank">legal</a>
 <a href="https://framverse.github.io/fram_doc/calcs_glossary.html#Size_Limit" target="_blank">size
 limit</a> by stock, age, fishery, and time step. The legal proportion is
@@ -806,7 +861,7 @@ Stock Proportion(MSP) </a>.</p></li>
 Percentage of a fishery’s total catch that is accounted for by stocks
 modeled in FRAM. For the calculation of the model stock proportion see
 <a href = "https://framverse.github.io/fram_doc/calcs_glossary.html#Model-Stock_Proportion_(MSP)" target = "_blank" >Model
-Stock Proportion (MSP) </a>. <span id="PEF"></span></p></li>
+Stock Proportion (MSP) </a>.</p></li>
 <li><p><strong>PEF<sub>s</sub>:</strong> Stock specific Production
 Expansion Factor. The ratio of total stock escapement to the escapement
 of the CWTed population. It is calculated during the calibration. For
@@ -881,7 +936,7 @@ size limit in a given fishery and time step. This is calculated during
 the calibration.</p></li>
 <li><p><strong>t:</strong> Time step. There are 3
 <a href="https://framverse.github.io/fram_doc/calcs_data_chin.html#13_Time_Steps" target="_blank">time
-steps </a> per ‘year’: Oct – Apr, May – June, and July – Sept. </p></li>
+steps </a> per ‘year’: Oct – Apr, May – June, and July – Sept.</p></li>
 <li><p><strong>TargEncRate<sub>f,t</sub>:</strong>
 <a href="https://framverse.github.io/fram_doc/calcs_glossary.html#Sublegal" target="_blank">Sublegal</a>
 to
@@ -1084,8 +1139,8 @@ For NCBC sport and troll we averaged 2007 to 2014 stock proportions for
 FRAM model stocks (for more information please see
 <a href="https://framverse.github.io/fram_doc/literature/ModelStkPPN_9.27.20.xlsx" target="_blank">ModelStkPPN_9.27.20</a>.
 <!-- angilika, this reference should now work --></p>
-Table xxx. MSPs, flags, and data sources by fishery for “Total” and
-“Marked” frame of reference calibration runs.
+<p>Table xxx. MSPs, flags, and data sources by fishery for “Total” and
+“Marked” frame of reference calibration runs.</p>
 <div class="figure">
 <embed src="./literature/MSPSummary.pdf" title="The number next to the source references associated files listed below the table." width="800px" height="800px" type="application/pdf" />
 <p class="caption">
@@ -1093,6 +1148,23 @@ The number next to the source references associated files listed below
 the table.
 </p>
 </div>
+<table>
+<caption style="font-size:1.5em; color:black">
+<b>Figure 2</b>: The number next to the source references associated
+files listed below the table.
+</caption>
+<colgroup>
+<col width="500">
+</col>
+</colgroup>
+<thead>
+<tr class="header">
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+<p>
 </div>
 </div>
 </div>
@@ -1127,14 +1199,26 @@ within RMIS and is a function of the total number of Chinook caught
 during the sampling period divided by the number of Chinook sampled
 during the sampling period. The following information comes from <a
 href="https://www.rmpc.org/">RMIS</a> Catch/Sample queries.</p>
-<div id="jdwvaqdwdo" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>html {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
+<div id="uhhurvxxrg" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#uhhurvxxrg table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-#jdwvaqdwdo .gt_table {
+#uhhurvxxrg thead, #uhhurvxxrg tbody, #uhhurvxxrg tfoot, #uhhurvxxrg tr, #uhhurvxxrg td, #uhhurvxxrg th {
+  border-style: none;
+}
+
+#uhhurvxxrg p {
+  margin: 0;
+  padding: 0;
+}
+
+#uhhurvxxrg .gt_table {
   display: table;
   border-collapse: collapse;
+  line-height: normal;
   margin-left: auto;
   margin-right: auto;
   color: #333333;
@@ -1157,24 +1241,12 @@ href="https://www.rmpc.org/">RMIS</a> Catch/Sample queries.</p>
   border-left-color: #D3D3D3;
 }
 
-#jdwvaqdwdo .gt_heading {
-  background-color: #FFFFFF;
-  text-align: center;
-  border-bottom-color: #FFFFFF;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-}
-
-#jdwvaqdwdo .gt_caption {
+#uhhurvxxrg .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#jdwvaqdwdo .gt_title {
+#uhhurvxxrg .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1186,25 +1258,37 @@ href="https://www.rmpc.org/">RMIS</a> Catch/Sample queries.</p>
   border-bottom-width: 0;
 }
 
-#jdwvaqdwdo .gt_subtitle {
+#uhhurvxxrg .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
-  padding-top: 0;
-  padding-bottom: 6px;
+  padding-top: 3px;
+  padding-bottom: 5px;
   padding-left: 5px;
   padding-right: 5px;
   border-top-color: #FFFFFF;
   border-top-width: 0;
 }
 
-#jdwvaqdwdo .gt_bottom_border {
+#uhhurvxxrg .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#uhhurvxxrg .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#jdwvaqdwdo .gt_col_headings {
+#uhhurvxxrg .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1219,7 +1303,7 @@ href="https://www.rmpc.org/">RMIS</a> Catch/Sample queries.</p>
   border-right-color: #D3D3D3;
 }
 
-#jdwvaqdwdo .gt_col_heading {
+#uhhurvxxrg .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1239,7 +1323,7 @@ href="https://www.rmpc.org/">RMIS</a> Catch/Sample queries.</p>
   overflow-x: hidden;
 }
 
-#jdwvaqdwdo .gt_column_spanner_outer {
+#uhhurvxxrg .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1251,15 +1335,15 @@ href="https://www.rmpc.org/">RMIS</a> Catch/Sample queries.</p>
   padding-right: 4px;
 }
 
-#jdwvaqdwdo .gt_column_spanner_outer:first-child {
+#uhhurvxxrg .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#jdwvaqdwdo .gt_column_spanner_outer:last-child {
+#uhhurvxxrg .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#jdwvaqdwdo .gt_column_spanner {
+#uhhurvxxrg .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1271,7 +1355,11 @@ href="https://www.rmpc.org/">RMIS</a> Catch/Sample queries.</p>
   width: 100%;
 }
 
-#jdwvaqdwdo .gt_group_heading {
+#uhhurvxxrg .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#uhhurvxxrg .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1297,7 +1385,7 @@ href="https://www.rmpc.org/">RMIS</a> Catch/Sample queries.</p>
   text-align: left;
 }
 
-#jdwvaqdwdo .gt_empty_group_heading {
+#uhhurvxxrg .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1312,15 +1400,15 @@ href="https://www.rmpc.org/">RMIS</a> Catch/Sample queries.</p>
   vertical-align: middle;
 }
 
-#jdwvaqdwdo .gt_from_md > :first-child {
+#uhhurvxxrg .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#jdwvaqdwdo .gt_from_md > :last-child {
+#uhhurvxxrg .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#jdwvaqdwdo .gt_row {
+#uhhurvxxrg .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1339,7 +1427,7 @@ href="https://www.rmpc.org/">RMIS</a> Catch/Sample queries.</p>
   overflow-x: hidden;
 }
 
-#jdwvaqdwdo .gt_stub {
+#uhhurvxxrg .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1352,7 +1440,7 @@ href="https://www.rmpc.org/">RMIS</a> Catch/Sample queries.</p>
   padding-right: 5px;
 }
 
-#jdwvaqdwdo .gt_stub_row_group {
+#uhhurvxxrg .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1366,11 +1454,15 @@ href="https://www.rmpc.org/">RMIS</a> Catch/Sample queries.</p>
   vertical-align: top;
 }
 
-#jdwvaqdwdo .gt_row_group_first td {
+#uhhurvxxrg .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#jdwvaqdwdo .gt_summary_row {
+#uhhurvxxrg .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#uhhurvxxrg .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1380,16 +1472,16 @@ href="https://www.rmpc.org/">RMIS</a> Catch/Sample queries.</p>
   padding-right: 5px;
 }
 
-#jdwvaqdwdo .gt_first_summary_row {
+#uhhurvxxrg .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#jdwvaqdwdo .gt_first_summary_row.thick {
+#uhhurvxxrg .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#jdwvaqdwdo .gt_last_summary_row {
+#uhhurvxxrg .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1399,7 +1491,7 @@ href="https://www.rmpc.org/">RMIS</a> Catch/Sample queries.</p>
   border-bottom-color: #D3D3D3;
 }
 
-#jdwvaqdwdo .gt_grand_summary_row {
+#uhhurvxxrg .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1409,7 +1501,7 @@ href="https://www.rmpc.org/">RMIS</a> Catch/Sample queries.</p>
   padding-right: 5px;
 }
 
-#jdwvaqdwdo .gt_first_grand_summary_row {
+#uhhurvxxrg .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1419,11 +1511,21 @@ href="https://www.rmpc.org/">RMIS</a> Catch/Sample queries.</p>
   border-top-color: #D3D3D3;
 }
 
-#jdwvaqdwdo .gt_striped {
+#uhhurvxxrg .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#uhhurvxxrg .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#jdwvaqdwdo .gt_table_body {
+#uhhurvxxrg .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1432,7 +1534,7 @@ href="https://www.rmpc.org/">RMIS</a> Catch/Sample queries.</p>
   border-bottom-color: #D3D3D3;
 }
 
-#jdwvaqdwdo .gt_footnotes {
+#uhhurvxxrg .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1446,30 +1548,8 @@ href="https://www.rmpc.org/">RMIS</a> Catch/Sample queries.</p>
   border-right-color: #D3D3D3;
 }
 
-#jdwvaqdwdo .gt_footnote {
+#uhhurvxxrg .gt_footnote {
   margin: 0px;
-  font-size: 90%;
-  padding-left: 4px;
-  padding-right: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#jdwvaqdwdo .gt_sourcenotes {
-  color: #333333;
-  background-color: #FFFFFF;
-  border-bottom-style: none;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-}
-
-#jdwvaqdwdo .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1477,71 +1557,91 @@ href="https://www.rmpc.org/">RMIS</a> Catch/Sample queries.</p>
   padding-right: 5px;
 }
 
-#jdwvaqdwdo .gt_left {
+#uhhurvxxrg .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#uhhurvxxrg .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#uhhurvxxrg .gt_left {
   text-align: left;
 }
 
-#jdwvaqdwdo .gt_center {
+#uhhurvxxrg .gt_center {
   text-align: center;
 }
 
-#jdwvaqdwdo .gt_right {
+#uhhurvxxrg .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#jdwvaqdwdo .gt_font_normal {
+#uhhurvxxrg .gt_font_normal {
   font-weight: normal;
 }
 
-#jdwvaqdwdo .gt_font_bold {
+#uhhurvxxrg .gt_font_bold {
   font-weight: bold;
 }
 
-#jdwvaqdwdo .gt_font_italic {
+#uhhurvxxrg .gt_font_italic {
   font-style: italic;
 }
 
-#jdwvaqdwdo .gt_super {
+#uhhurvxxrg .gt_super {
   font-size: 65%;
 }
 
-#jdwvaqdwdo .gt_footnote_marks {
-  font-style: italic;
-  font-weight: normal;
+#uhhurvxxrg .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
+  position: initial;
 }
 
-#jdwvaqdwdo .gt_asterisk {
+#uhhurvxxrg .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#jdwvaqdwdo .gt_indent_1 {
+#uhhurvxxrg .gt_indent_1 {
   text-indent: 5px;
 }
 
-#jdwvaqdwdo .gt_indent_2 {
+#uhhurvxxrg .gt_indent_2 {
   text-indent: 10px;
 }
 
-#jdwvaqdwdo .gt_indent_3 {
+#uhhurvxxrg .gt_indent_3 {
   text-indent: 15px;
 }
 
-#jdwvaqdwdo .gt_indent_4 {
+#uhhurvxxrg .gt_indent_4 {
   text-indent: 20px;
 }
 
-#jdwvaqdwdo .gt_indent_5 {
+#uhhurvxxrg .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
-<table class="gt_table">
-  
-  <thead class="gt_col_headings">
-    <tr>
+<table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+  <thead>
+    <tr class="gt_col_headings">
       <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Species">Species</th>
       <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Year">Year</th>
       <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Fishery">Fishery</th>
@@ -1572,14 +1672,26 @@ of the Coded Wire Tag Program (Nandor, 2009)</a>.</p>
 <p>For the example tag, the table below demonstrates that the brood year
 expansion applied should be 1.02. The brood year expanded value of the
 example recovery becomes 7.11 (6.97 * 1.02).</p>
-<div id="xvwvohnkho" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>html {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
+<div id="qseojspvfh" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#qseojspvfh table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-#xvwvohnkho .gt_table {
+#qseojspvfh thead, #qseojspvfh tbody, #qseojspvfh tfoot, #qseojspvfh tr, #qseojspvfh td, #qseojspvfh th {
+  border-style: none;
+}
+
+#qseojspvfh p {
+  margin: 0;
+  padding: 0;
+}
+
+#qseojspvfh .gt_table {
   display: table;
   border-collapse: collapse;
+  line-height: normal;
   margin-left: auto;
   margin-right: auto;
   color: #333333;
@@ -1602,24 +1714,12 @@ example recovery becomes 7.11 (6.97 * 1.02).</p>
   border-left-color: #D3D3D3;
 }
 
-#xvwvohnkho .gt_heading {
-  background-color: #FFFFFF;
-  text-align: center;
-  border-bottom-color: #FFFFFF;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-}
-
-#xvwvohnkho .gt_caption {
+#qseojspvfh .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#xvwvohnkho .gt_title {
+#qseojspvfh .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1631,25 +1731,37 @@ example recovery becomes 7.11 (6.97 * 1.02).</p>
   border-bottom-width: 0;
 }
 
-#xvwvohnkho .gt_subtitle {
+#qseojspvfh .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
-  padding-top: 0;
-  padding-bottom: 6px;
+  padding-top: 3px;
+  padding-bottom: 5px;
   padding-left: 5px;
   padding-right: 5px;
   border-top-color: #FFFFFF;
   border-top-width: 0;
 }
 
-#xvwvohnkho .gt_bottom_border {
+#qseojspvfh .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#qseojspvfh .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#xvwvohnkho .gt_col_headings {
+#qseojspvfh .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1664,7 +1776,7 @@ example recovery becomes 7.11 (6.97 * 1.02).</p>
   border-right-color: #D3D3D3;
 }
 
-#xvwvohnkho .gt_col_heading {
+#qseojspvfh .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1684,7 +1796,7 @@ example recovery becomes 7.11 (6.97 * 1.02).</p>
   overflow-x: hidden;
 }
 
-#xvwvohnkho .gt_column_spanner_outer {
+#qseojspvfh .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1696,15 +1808,15 @@ example recovery becomes 7.11 (6.97 * 1.02).</p>
   padding-right: 4px;
 }
 
-#xvwvohnkho .gt_column_spanner_outer:first-child {
+#qseojspvfh .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#xvwvohnkho .gt_column_spanner_outer:last-child {
+#qseojspvfh .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#xvwvohnkho .gt_column_spanner {
+#qseojspvfh .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1716,7 +1828,11 @@ example recovery becomes 7.11 (6.97 * 1.02).</p>
   width: 100%;
 }
 
-#xvwvohnkho .gt_group_heading {
+#qseojspvfh .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#qseojspvfh .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1742,7 +1858,7 @@ example recovery becomes 7.11 (6.97 * 1.02).</p>
   text-align: left;
 }
 
-#xvwvohnkho .gt_empty_group_heading {
+#qseojspvfh .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1757,15 +1873,15 @@ example recovery becomes 7.11 (6.97 * 1.02).</p>
   vertical-align: middle;
 }
 
-#xvwvohnkho .gt_from_md > :first-child {
+#qseojspvfh .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#xvwvohnkho .gt_from_md > :last-child {
+#qseojspvfh .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#xvwvohnkho .gt_row {
+#qseojspvfh .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1784,7 +1900,7 @@ example recovery becomes 7.11 (6.97 * 1.02).</p>
   overflow-x: hidden;
 }
 
-#xvwvohnkho .gt_stub {
+#qseojspvfh .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1797,7 +1913,7 @@ example recovery becomes 7.11 (6.97 * 1.02).</p>
   padding-right: 5px;
 }
 
-#xvwvohnkho .gt_stub_row_group {
+#qseojspvfh .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1811,11 +1927,15 @@ example recovery becomes 7.11 (6.97 * 1.02).</p>
   vertical-align: top;
 }
 
-#xvwvohnkho .gt_row_group_first td {
+#qseojspvfh .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#xvwvohnkho .gt_summary_row {
+#qseojspvfh .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#qseojspvfh .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1825,16 +1945,16 @@ example recovery becomes 7.11 (6.97 * 1.02).</p>
   padding-right: 5px;
 }
 
-#xvwvohnkho .gt_first_summary_row {
+#qseojspvfh .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#xvwvohnkho .gt_first_summary_row.thick {
+#qseojspvfh .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#xvwvohnkho .gt_last_summary_row {
+#qseojspvfh .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1844,7 +1964,7 @@ example recovery becomes 7.11 (6.97 * 1.02).</p>
   border-bottom-color: #D3D3D3;
 }
 
-#xvwvohnkho .gt_grand_summary_row {
+#qseojspvfh .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1854,7 +1974,7 @@ example recovery becomes 7.11 (6.97 * 1.02).</p>
   padding-right: 5px;
 }
 
-#xvwvohnkho .gt_first_grand_summary_row {
+#qseojspvfh .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1864,11 +1984,21 @@ example recovery becomes 7.11 (6.97 * 1.02).</p>
   border-top-color: #D3D3D3;
 }
 
-#xvwvohnkho .gt_striped {
+#qseojspvfh .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#qseojspvfh .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#xvwvohnkho .gt_table_body {
+#qseojspvfh .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1877,7 +2007,7 @@ example recovery becomes 7.11 (6.97 * 1.02).</p>
   border-bottom-color: #D3D3D3;
 }
 
-#xvwvohnkho .gt_footnotes {
+#qseojspvfh .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1891,30 +2021,8 @@ example recovery becomes 7.11 (6.97 * 1.02).</p>
   border-right-color: #D3D3D3;
 }
 
-#xvwvohnkho .gt_footnote {
+#qseojspvfh .gt_footnote {
   margin: 0px;
-  font-size: 90%;
-  padding-left: 4px;
-  padding-right: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#xvwvohnkho .gt_sourcenotes {
-  color: #333333;
-  background-color: #FFFFFF;
-  border-bottom-style: none;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-}
-
-#xvwvohnkho .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1922,71 +2030,91 @@ example recovery becomes 7.11 (6.97 * 1.02).</p>
   padding-right: 5px;
 }
 
-#xvwvohnkho .gt_left {
+#qseojspvfh .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#qseojspvfh .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#qseojspvfh .gt_left {
   text-align: left;
 }
 
-#xvwvohnkho .gt_center {
+#qseojspvfh .gt_center {
   text-align: center;
 }
 
-#xvwvohnkho .gt_right {
+#qseojspvfh .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#xvwvohnkho .gt_font_normal {
+#qseojspvfh .gt_font_normal {
   font-weight: normal;
 }
 
-#xvwvohnkho .gt_font_bold {
+#qseojspvfh .gt_font_bold {
   font-weight: bold;
 }
 
-#xvwvohnkho .gt_font_italic {
+#qseojspvfh .gt_font_italic {
   font-style: italic;
 }
 
-#xvwvohnkho .gt_super {
+#qseojspvfh .gt_super {
   font-size: 65%;
 }
 
-#xvwvohnkho .gt_footnote_marks {
-  font-style: italic;
-  font-weight: normal;
+#qseojspvfh .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
+  position: initial;
 }
 
-#xvwvohnkho .gt_asterisk {
+#qseojspvfh .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#xvwvohnkho .gt_indent_1 {
+#qseojspvfh .gt_indent_1 {
   text-indent: 5px;
 }
 
-#xvwvohnkho .gt_indent_2 {
+#qseojspvfh .gt_indent_2 {
   text-indent: 10px;
 }
 
-#xvwvohnkho .gt_indent_3 {
+#qseojspvfh .gt_indent_3 {
   text-indent: 15px;
 }
 
-#xvwvohnkho .gt_indent_4 {
+#qseojspvfh .gt_indent_4 {
   text-indent: 20px;
 }
 
-#xvwvohnkho .gt_indent_5 {
+#qseojspvfh .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
-<table class="gt_table">
-  
-  <thead class="gt_col_headings">
-    <tr>
+<table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+  <thead>
+    <tr class="gt_col_headings">
       <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Year">Year</th>
       <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="TotExpandedRecoveries">TotExpandedRecoveries</th>
       <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="BY.Expansion">BY.Expansion</th>
@@ -2239,6 +2367,22 @@ $$</span></p>
 Table xxx Cohort Reconstruction Example
 </p>
 </div>
+<table>
+<caption style="font-size:1.5em; color:black">
+<b>Figure 3</b>: Table xxx Cohort Reconstruction Example
+</caption>
+<colgroup>
+<col width="500">
+</col>
+</colgroup>
+<thead>
+<tr class="header">
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+<p>
 <p>Once an initial estimate of preterminal and terminal CWT cohort sizes
 have been made, sublegal (shaker) and CNR mortalities by fishery, age,
 and time period can be estimated. See
@@ -2335,6 +2479,22 @@ FRAM “validation” runs.</p>
 Figure xxx Out-of-Base Procedures
 </p>
 </div>
+<table>
+<caption style="font-size:1.5em; color:black">
+<b>Figure 4</b>: Figure xxx Out-of-Base Procedures
+</caption>
+<colgroup>
+<col width="500">
+</col>
+</colgroup>
+<thead>
+<tr class="header">
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+<p>
 <div id="forward-cohort-reconstruction" class="section level4">
 <h4>Forward Cohort Reconstruction</h4>
 <p>The “Forward Cohort Reconstruction” is unique to out-of-base
@@ -2470,8 +2630,8 @@ calculating the cohort are iterative steps, because sublegal mortalities
 are a function of the cohort size and the cohort size is dependent on
 sublegal mortalities. These steps are repeated until age-2 abundances
 converge. This occurs when abundances differ by less than 1%.</p></li>
-<li><p>Calculate maturation rates and OOB exploitation rates<br />
-See
+<li><p>Calculate maturation rates and OOB exploitation rates
+<!-- Don't know where these sections are --> See
 <a href="https://framverse.github.io/fram_doc/base_chin_doc_calibration.html#Calculating Exploitation Rates">
 Maturation Rates </a>(xxx) and
 <a href="https://framverse.github.io/fram_doc/base_chin_doc_calibration.html#Maturation Rate Calculations">
