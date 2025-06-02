@@ -14,7 +14,7 @@
 
 <title>Base Period Documentation - Introduction</title>
 
-<script src="site_libs/header-attrs-2.14/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.28/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/yeti.min.css" rel="stylesheet" />
@@ -30,7 +30,7 @@
        h6 {font-size: 12px;}
        code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
        pre:not([class]) { background-color: white }</style>
-<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<script src="site_libs/jqueryui-1.13.2/jquery-ui.min.js"></script>
 <link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
 <script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
@@ -38,8 +38,8 @@
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
 <link href="site_libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet" />
 <script src="site_libs/pagedtable-1.1/js/pagedtable.js"></script>
-<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
-<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-6.4.2/css/all.min.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-6.4.2/css/v4-shims.min.css" rel="stylesheet" />
 
 <style type="text/css">
   code{white-space: pre-wrap;}
@@ -151,11 +151,15 @@ $(document).ready(function () {
     href = "index.html";
   var menuAnchor = $('a[href="' + href + '"]');
 
-  // mark it active
-  menuAnchor.tab('show');
-
-  // if it's got a parent navbar menu mark it active as well
-  menuAnchor.closest('li.dropdown').addClass('active');
+  // mark the anchor link active (and if it's in a dropdown, also mark that active)
+  var dropdown = menuAnchor.closest('li.dropdown');
+  if (window.bootstrap) { // Bootstrap 4+
+    menuAnchor.addClass('active');
+    dropdown.find('> .dropdown-toggle').addClass('active');
+  } else { // Bootstrap 3
+    menuAnchor.parent().addClass('active');
+    dropdown.addClass('active');
+  }
 
   // Navbar adjustments
   var navHeight = $(".navbar").first().height() + 15;
@@ -184,8 +188,8 @@ $(document).ready(function () {
   border-radius: 4px;
 }
 
-.tabset-dropdown > .nav-tabs > li.active:before {
-  content: "";
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
   font-family: 'Glyphicons Halflings';
   display: inline-block;
   padding: 10px;
@@ -193,16 +197,9 @@ $(document).ready(function () {
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
-  content: "&#xe258;";
-  border: none;
-}
-
-.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
-  content: "";
+  content: "\e258";
   font-family: 'Glyphicons Halflings';
-  display: inline-block;
-  padding: 10px;
-  border-right: 1px solid #ddd;
+  border: none;
 }
 
 .tabset-dropdown > .nav-tabs > li.active {
@@ -483,9 +480,9 @@ MathJax = {
 Assessment Model (FRAM) data. The most important parameter, base period
 exploitation rates, is estimated from “base years” through
 stock-specific
-<a href = "https://framverse.github.io/fram_doc/calcs_glossary.html#Coded-Wire_Tag_(CWT)" target = "_blank" title = "CWT">CWT</a>
+<a href = "https://framverse.github.io/fram_doc/calcs_glossary.html###Coded-Wire_Tag_(CWT)" target = "_blank" title = "CWT">CWT</a>
 recovery analysis and a process of
-<a href = "https://framverse.github.io/fram_doc/calcs_glossary.html#Cohort_Analysis" target = "_blank" >Cohort
+<a href = "https://framverse.github.io/fram_doc/calcs_glossary.html###Cohort_Analysis" target = "_blank" >Cohort
 Reconstruction</a>. Base period data are averaged across base period
 years and represent all the static information needed for a model run.
 Resulting base period reference parameters are used to populate the FRAM
@@ -494,7 +491,7 @@ model to predict annual stock/fishery specific impacts.</p>
 they reflected the most contemporary period at the time the project
 commenced and additionally had good numbers of CWT recoveries from
 recently implemented
-<a href = "https://framverse.github.io/fram_doc/calcs_glossary.html#Mark-Selective_Fishery_(MSF)" target = "_blank" title = "Mark-Selective">mark-selective</a>
+<a href = "https://framverse.github.io/fram_doc/calcs_glossary.html###Mark-Selective_Fishery_(MSF)" target = "_blank" title = "Mark-Selective">mark-selective</a>
 sport fisheries.</p>
 <p>The process of creating the latest base period is also called the
 “calibration process”. There are two portions to the calibration
@@ -502,7 +499,7 @@ process, data preparation (also called the “FRAMBuilder process”) and
 running the calibration program. The calibration followed the existing
 data structure of 39
 <a href = "https://framverse.github.io/fram_doc/calcs_appendices.html#Appendix_2_Chinook_FRAM_stocks" target = "_blank" >stocks</a>
-<a href = "https://framverse.github.io/fram_doc/calcs_glossary.html#Adipose_Mark" target = "_blank" >(adipose
+<a href = "https://framverse.github.io/fram_doc/calcs_glossary.html###Adipose_Mark" target = "_blank" >(adipose
 marked)</a>, 73
 <a href = "https://framverse.github.io/fram_doc/calcs_appendices.html#Appendix_4_Chinook_FRAM_fisheries" target = "_blank" >fisheries</a>,
 and 3
@@ -531,7 +528,7 @@ to match observed catches, and incorporating non-landed mortalities.</p>
 This program flow works for all stocks with sufficient CWT
 representation in base period years (37 of the 39 FRAM stocks). For a
 description of how to handle CWT recoveries from “out-of-base” years see
-<a href = "https://framverse.github.io/fram_doc/calcs_glossary.html#Out-of-Base_(OOB)" target = "_blank" >Out-of-Base
+<a href = "https://framverse.github.io/fram_doc/calcs_glossary.html###Out-of-Base_(OOB)" target = "_blank" >Out-of-Base
 Procedures</a>.</p>
 <div class="figure">
 <img src="images/Calibration%20Overview.jpg" alt="Figure 1 Calibration Overview" width="700px" height="550px" />
@@ -562,7 +559,7 @@ programs, missing CWT representation, and much more.</p>
 class="section level2">
 <h2>Assemble a Team of Experts and Stakeholders</h2>
 <p>FRAM is used in several forums, such as the
-<a href = "https://framverse.github.io/fram_doc/calcs_glossary.html#Pacific_Fishery_Management_Council_(PFMC)" target = "_blank" >Pacific
+<a href = "https://framverse.github.io/fram_doc/calcs_glossary.html###Pacific_Fishery_Management_Council_(PFMC)" target = "_blank" >Pacific
 Fishery Management Council (PFMC) </a>,the Puget Sound co-manager
 process, and by many different user groups from federal, state, and
 tribal organisations. Updates and changes to FRAM can have wide-ranging
@@ -601,17 +598,17 @@ monthly. The workgroup consisted of the following members:</p>
 <div id="mass-marking-and-mark-selective-fisheries-msf"
 class="section level2">
 <h2>Mass Marking and
-<a href="https://framverse.github.io/fram_doc/calcs_glossary.html#Mark-Selective_Fishery_(MSF)" target="_blank">Mark-Selective
+<a href="https://framverse.github.io/fram_doc/calcs_glossary.html###Mark-Selective_Fishery_(MSF)" target="_blank">Mark-Selective
 Fisheries (MSF)</a></h2>
 <p>Development of exploitation rates relies on the recovery of
-<a href= "https://framverse.github.io/fram_doc/calcs_glossary.html#Coded-Wire_Tag_(CWT)" target="_blank">coded-wire
+<a href= "https://framverse.github.io/fram_doc/calcs_glossary.html###Coded-Wire_Tag_(CWT)" target="_blank">coded-wire
 tags (CWT)</a>. Coded micro-wire is implanted in the snout of juvenile
 salmon prior to release. When recovered, the binary or numeric code on
 the tag identifies the tag group, and thus provides information about
 the location and timing of release, special hatchery treatments, etc.
 This information is used to assign CWT recoveries to individual stocks.
 Prior to
-<a href= "https://framverse.github.io/fram_doc/calcs_glossary.html#Mass_Marking" target="_blank">mass
+<a href= "https://framverse.github.io/fram_doc/calcs_glossary.html###Mass_Marking" target="_blank">mass
 marking</a> a missing adipose fin was a visual indicator that a salmon
 contained a CWT. A sampler could then remove the snout and send it to
 the lab for extraction and analysis of the CWT. With mass-marking, this
@@ -653,7 +650,7 @@ incorporate mark-selective fishing parameters.</p>
 <p>Beyond calibration logistics, the “marked” frame of reference is
 preferable for other reasons. First, given the existence of a mix of
 non-selective and
-<a href="https://framverse.github.io/fram_doc/calcs_glossary.html#Mark-Selective_Fishery_(MSF)" target="_blank">
+<a href="https://framverse.github.io/fram_doc/calcs_glossary.html###Mark-Selective_Fishery_(MSF)" target="_blank">
 MSF </a> regulations, the “marked” approach will yield cohort
 reconstructions results with less bias than the “total” approach.
 Second, even with full electronic sampling, sufficient DIT groups, and a
@@ -676,7 +673,7 @@ period must be translated into something that can be applied on a
 (i.e., ER for marked stocks become exploitation rates or encounter rates
 for unmarked stocks in NSF and MSF, respectively), “total” applications
 also require an estimate of
-<a href = "https://framverse.github.io/fram_doc/calcs_glossary.html#Model-Stock_Proportion_(MSP)" target = "_blank">Model
+<a href = "https://framverse.github.io/fram_doc/calcs_glossary.html###Model-Stock_Proportion_(MSP)" target = "_blank">Model
 Stock Proportion (MSP)</a>. MSP is the expected fraction of a fishery’s
 total catch that is comprised of model stocks. <strong>For these
 reasons, the calibration was performed on “marked only” catch and
@@ -729,7 +726,7 @@ feasibility assessments where CWTs by stock and fishery were enumerated,
 these brood years had a sufficient number of CWT recoveries on par with
 the previous base period for many stocks and fisheries. Additionally,
 many Puget Sound sport fisheries had recently re-opened under
-<a href = "https://framverse.github.io/fram_doc/calcs_glossary.html#Mark-Selective_Fishery_(MSF)" target = "_blank" title = "Mark-Selective">mark-selective</a>
+<a href = "https://framverse.github.io/fram_doc/calcs_glossary.html###Mark-Selective_Fishery_(MSF)" target = "_blank" title = "Mark-Selective">mark-selective</a>
 regulation, providing a valuable source of CWT recoveries.</p>
 </div>
 <div id="stock-and-fishery-profiles" class="section level2">
@@ -809,7 +806,7 @@ recoveries looked plausible.</p>
 Bellingham Bay, are automatically combined by FRAMbuilder, because
 non-treaty net fisheries are usually too small to provide a significant
 number of CWT recoveries. Additionally, coding in the
-<a href="https://framverse.github.io/fram_doc/calcs_glossary.html#Regional_Mark_Information_System_(RMIS)" target="_blank">Regional
+<a href="https://framverse.github.io/fram_doc/calcs_glossary.html###Regional_Mark_Information_System_(RMIS)" target="_blank">Regional
 Mark Information System (RMIS)</a> often does not allow a
 differentiation between treaty and non-treaty tag recoveries. For the
 purpose of the cohort reconstruction each fishery of a treaty/non-treaty
@@ -857,7 +854,7 @@ years with adequate sampling was selected to represent exploitation rate
 patterns for this fishery.</p></li>
 </ul>
 <div class="figure">
-<img src="literature/SurrogateFisheries.pdf" alt="Table 1. Surrogate Fisheries Matrix: Average marked (Mrk) and total (Tot) catches in the new base period, raw unexpanded CWT recoveries by time step (T), surrogate matrix, and comments. The surrogate matrix lists the number of CWT recoveries by time step for fisheries without a surrogate. For fisheries with surrogates the matrix lists the surrogate fishery number (F), and/or time step number (T), or “BPER” for fisheries where the previous base period exploitation rate is used as a surrogate." width="800px" height="800px" />
+<embed src="literature/SurrogateFisheries.pdf" title="Table 1. Surrogate Fisheries Matrix: Average marked (Mrk) and total (Tot) catches in the new base period, raw unexpanded CWT recoveries by time step (T), surrogate matrix, and comments. The surrogate matrix lists the number of CWT recoveries by time step for fisheries without a surrogate. For fisheries with surrogates the matrix lists the surrogate fishery number (F), and/or time step number (T), or “BPER” for fisheries where the previous base period exploitation rate is used as a surrogate." width="800px" height="800px" type="application/pdf" />
 <p class="caption">
 Table 1. Surrogate Fisheries Matrix: Average marked (Mrk) and total
 (Tot) catches in the new base period, raw unexpanded CWT recoveries by
@@ -966,7 +963,7 @@ proportions. In the new calibration program, the user has the option of
 externally assigning non-model stock proportions for these
 fisheries.<br />
 Handling of CWTCatch is described in paragraph
-<a href = "https://framverse.github.io/fram_doc/calcs_glossary.html#Model-Stock_Proportion_(MSP)" target = "_blank" >Model
+<a href = "https://framverse.github.io/fram_doc/calcs_glossary.html###Model-Stock_Proportion_(MSP)" target = "_blank" >Model
 Stock Proportion(MSP)</a> and specified in tables
 <a href="https:// framverse.github.io/fram_doc/base_chin_doc_appendix.html#Base_Period_Marked_Catches" target="_blank"><code>BasePeriodCatch</code></a>
 for marked and
@@ -1020,7 +1017,7 @@ CWT_{s,a,f,t} = Cohort_{s,a,TerminalType,t} *
 SurrogateFishBPER_{s,a,f,t} * LegalProp_{s,a,f,t}\phantom{\frac{1}{1}}
 $$</span> where,</p>
 <ul>
-<li><p><a href="https://framverse.github.io/fram_doc/calcs_glossary.html#Terminal_Fishery" target="_blank">TerminalType</a></p></li>
+<li><p><a href="https://framverse.github.io/fram_doc/calcs_glossary.html###Terminal_Fishery" target="_blank">TerminalType</a></p></li>
 <li><p><a href="https://framverse.github.io/fram_doc/base_chin_doc_calibration.html#legal_prop_calibration" target="_blank">LegalProp</a></p></li>
 </ul>
 <p>A somewhat simpler version of this approach was used for fisheries
@@ -1056,7 +1053,7 @@ Procedures</a>.</p>
 adjustments were required.</p>
 <p><strong>Apportion escapement CWTs into time 2 and 3</strong> <br>
 White River Fingerlings and Yearlings
-<a href="https://framverse.github.io/fram_doc/calcs_glossary.html#Maturation" target="_blank">mature</a>
+<a href="https://framverse.github.io/fram_doc/calcs_glossary.html###Maturation" target="_blank">mature</a>
 in time step 2 (May-June) and time step 3 (Jul-Aug). Trap counts from
 2002 to 2012 pre July 1 and post July 1 where used to apportion
 escapements CWTs into time 2 and time 3. See tab
@@ -1081,7 +1078,7 @@ sport fishery in 1999 received a large expansion when it was expanded to
 base period fishing effort (divided by fishery scaler). This recovery
 was adjusted using the average expansion White River CWT recoveries with
 different
-<a href="https://framverse.github.io/fram_doc/calcs_glossary.html#Tag_Code" target="_blank">tag
+<a href="https://framverse.github.io/fram_doc/calcs_glossary.html###Tag_Code" target="_blank">tag
 codes</a> received in the same fishery. The average expansion accounted
 for base period fishing effort and brood year weight. See tab
 <code>WhiteR_A8Sport</code> in file
@@ -1106,12 +1103,12 @@ and thus subject to the low statistical power of small sample sizes.</p>
 <p>If the age-5 base period exploitation rate in a pre-terminal
 fishery/time step was greater than 10% and the number of escapement
 recoveries smaller than 20, a stock became a candidate for an
-<a href="https://framverse.github.io/fram_doc/calcs_glossary.html#Exploitation_Rate_(ER)" target="_blank">ER</a>
+<a href="https://framverse.github.io/fram_doc/calcs_glossary.html###Exploitation_Rate_(ER)" target="_blank">ER</a>
 adjustment. Based on these criteria 11 stocks with improbably high
 exploitation rates were selected for CWT adjustments. See table 2.</p>
 <p>Age-5 CWTs were adjusted based on the relationship between age 4 and
 5
-<a href="https://framverse.github.io/fram_doc/calcs_glossary.html#Base_Period_Exploitation_Rate_(BPER)" target="_blank">BPERs</a>.
+<a href="https://framverse.github.io/fram_doc/calcs_glossary.html###Base_Period_Exploitation_Rate_(BPER)" target="_blank">BPERs</a>.
 The initial dataset to generate the age-4 to age-5 BPER relationship
 included all age-4 and age-5 BPERs for stocks where there were greater
 than 100 age 5 escapement recoveries. The dataset was then filtered to
@@ -1130,7 +1127,7 @@ AdjustedCWTCatch_{s,age=5,f,t}=\frac{ER.Target_{s,a=5,f,t}}{CWTCatch_{s,a=5,f,t}
 $$</span> Table 3. Age-5 BPERs Pre- and Post Adjustment and CWT
 Recoveries in Fisheries and Escapement
 <div class="figure">
-<img src="literature/Age5BPERAdjustments.JPG" alt="Table xxx. Age-5 BPERs Pre- and Post Adjustment and CWT Recoveries in Fisheries and Escapement " width="438" />
+<img src="literature/Age5BPERAdjustments.jpg" alt="Table xxx. Age-5 BPERs Pre- and Post Adjustment and CWT Recoveries in Fisheries and Escapement " width="438" />
 <p class="caption">
 Table xxx. Age-5 BPERs Pre- and Post Adjustment and CWT Recoveries in
 Fisheries and Escapement
@@ -1146,14 +1143,14 @@ entirely lacked escapement recoveries for this age group. These stocks
 were Tulalip, Oregon Tules, Bonneville, and Central Valley. For these
 stocks age-5 escapement recoveries (AdjustedCWTEscapement) were imputed
 using the ratio of age-4 to age-5 Chinook
-<a href="https://framverse.github.io/fram_doc/calcs_glossary.html#Terminal_Run_Size" target="_blank">terminal
+<a href="https://framverse.github.io/fram_doc/calcs_glossary.html###Terminal_Run_Size" target="_blank">terminal
 run sizes</a> (TRSEst) times age-4 CWT recoveries.</p>
 <p>Equation 5: <span class="math display">$$
 AdjustedCWTEscapement_{s,age=5,esc}
 =\frac{TRSEst_{s,a=5,esc}}{TRS_{s,a=4,esc}}* CWTEscapement_{s,age=4,esc}
 $$</span></p>
 <p>Table 4. Age-5 Adjusted Escapements and Age-4 to Age-5 TRS Ratios</p>
-<p><img src="literature/Age5EscAdjust.JPG" width="369" /></p>
+<p><img src="literature/Age5EscAdjust.jpg" width="369" /></p>
 <p>For more information see
 <a href="literature/Calibration_CWT_Inputs; Rnd7_9.30.20.xlsx">
 Calibration_CWT_Inputs; Rnd7_9.30.20.xlsx </a> tab
@@ -1268,7 +1265,7 @@ analysis/calibration purposes (i.e., due to the lack of CWT recoveries,
 not impacts, in many northern fisheries for which catch is sampled
 visually only). Furthermore, due to poor CWT survival and limited ocean
 recovery data, relatively few
-<a href="https://framverse.github.io/fram_doc/calcs_glossary.html#Out-of-Base_(OOB)" target="_blank">out-of-base</a>
+<a href="https://framverse.github.io/fram_doc/calcs_glossary.html###Out-of-Base_(OOB)" target="_blank">out-of-base</a>
 AD+CWT code options existed that could inform stock inclusion via
 existing OOB procedures. 1990, 1992, and 1993 brood Elwha CWT recoveries
 could not be used for OOB procedures, because FRAM validation runs do
@@ -1312,7 +1309,7 @@ escapement. For more information see
 fingerling releases were marked and coded-wire-tagged. When a sufficient
 amount of CWTs are recovered for analysis, Elwha should be incorportated
 into the base period with a standard
-<a href="https://framverse.github.io/fram_doc/calcs_glossary.html#Out-of-Base_(OOB)" target="_blank">OOB</a>
+<a href="https://framverse.github.io/fram_doc/calcs_glossary.html###Out-of-Base_(OOB)" target="_blank">OOB</a>
 procedure.</p>
 <div id="method-for-creating-surrogate-elwha-cwt-recoveries"
 class="section level4">
@@ -1380,14 +1377,26 @@ validation runs. For more information see
 </a> and
 <a href="https://framverse.github.io/fram_doc/literature/draft_revised_stilly_age_comp.xlsx">
 draft_revised_stilly_age_comp.xlsx </a>.</p>
-<div id="yfcmwxrutx" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>html {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
+<div id="xcainycdbo" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#xcainycdbo table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-#yfcmwxrutx .gt_table {
+#xcainycdbo thead, #xcainycdbo tbody, #xcainycdbo tfoot, #xcainycdbo tr, #xcainycdbo td, #xcainycdbo th {
+  border-style: none;
+}
+
+#xcainycdbo p {
+  margin: 0;
+  padding: 0;
+}
+
+#xcainycdbo .gt_table {
   display: table;
   border-collapse: collapse;
+  line-height: normal;
   margin-left: auto;
   margin-right: auto;
   color: #333333;
@@ -1410,24 +1419,12 @@ draft_revised_stilly_age_comp.xlsx </a>.</p>
   border-left-color: #D3D3D3;
 }
 
-#yfcmwxrutx .gt_heading {
-  background-color: #FFFFFF;
-  text-align: center;
-  border-bottom-color: #FFFFFF;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-}
-
-#yfcmwxrutx .gt_caption {
+#xcainycdbo .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#yfcmwxrutx .gt_title {
+#xcainycdbo .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1439,25 +1436,37 @@ draft_revised_stilly_age_comp.xlsx </a>.</p>
   border-bottom-width: 0;
 }
 
-#yfcmwxrutx .gt_subtitle {
+#xcainycdbo .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
-  padding-top: 0;
-  padding-bottom: 6px;
+  padding-top: 3px;
+  padding-bottom: 5px;
   padding-left: 5px;
   padding-right: 5px;
   border-top-color: #FFFFFF;
   border-top-width: 0;
 }
 
-#yfcmwxrutx .gt_bottom_border {
+#xcainycdbo .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#xcainycdbo .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#yfcmwxrutx .gt_col_headings {
+#xcainycdbo .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1472,7 +1481,7 @@ draft_revised_stilly_age_comp.xlsx </a>.</p>
   border-right-color: #D3D3D3;
 }
 
-#yfcmwxrutx .gt_col_heading {
+#xcainycdbo .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1492,7 +1501,7 @@ draft_revised_stilly_age_comp.xlsx </a>.</p>
   overflow-x: hidden;
 }
 
-#yfcmwxrutx .gt_column_spanner_outer {
+#xcainycdbo .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1504,15 +1513,15 @@ draft_revised_stilly_age_comp.xlsx </a>.</p>
   padding-right: 4px;
 }
 
-#yfcmwxrutx .gt_column_spanner_outer:first-child {
+#xcainycdbo .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#yfcmwxrutx .gt_column_spanner_outer:last-child {
+#xcainycdbo .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#yfcmwxrutx .gt_column_spanner {
+#xcainycdbo .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1524,7 +1533,11 @@ draft_revised_stilly_age_comp.xlsx </a>.</p>
   width: 100%;
 }
 
-#yfcmwxrutx .gt_group_heading {
+#xcainycdbo .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#xcainycdbo .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1550,7 +1563,7 @@ draft_revised_stilly_age_comp.xlsx </a>.</p>
   text-align: left;
 }
 
-#yfcmwxrutx .gt_empty_group_heading {
+#xcainycdbo .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1565,15 +1578,15 @@ draft_revised_stilly_age_comp.xlsx </a>.</p>
   vertical-align: middle;
 }
 
-#yfcmwxrutx .gt_from_md > :first-child {
+#xcainycdbo .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#yfcmwxrutx .gt_from_md > :last-child {
+#xcainycdbo .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#yfcmwxrutx .gt_row {
+#xcainycdbo .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1592,7 +1605,7 @@ draft_revised_stilly_age_comp.xlsx </a>.</p>
   overflow-x: hidden;
 }
 
-#yfcmwxrutx .gt_stub {
+#xcainycdbo .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1605,7 +1618,7 @@ draft_revised_stilly_age_comp.xlsx </a>.</p>
   padding-right: 5px;
 }
 
-#yfcmwxrutx .gt_stub_row_group {
+#xcainycdbo .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1619,11 +1632,15 @@ draft_revised_stilly_age_comp.xlsx </a>.</p>
   vertical-align: top;
 }
 
-#yfcmwxrutx .gt_row_group_first td {
+#xcainycdbo .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#yfcmwxrutx .gt_summary_row {
+#xcainycdbo .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#xcainycdbo .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1633,16 +1650,16 @@ draft_revised_stilly_age_comp.xlsx </a>.</p>
   padding-right: 5px;
 }
 
-#yfcmwxrutx .gt_first_summary_row {
+#xcainycdbo .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#yfcmwxrutx .gt_first_summary_row.thick {
+#xcainycdbo .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#yfcmwxrutx .gt_last_summary_row {
+#xcainycdbo .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1652,7 +1669,7 @@ draft_revised_stilly_age_comp.xlsx </a>.</p>
   border-bottom-color: #D3D3D3;
 }
 
-#yfcmwxrutx .gt_grand_summary_row {
+#xcainycdbo .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1662,7 +1679,7 @@ draft_revised_stilly_age_comp.xlsx </a>.</p>
   padding-right: 5px;
 }
 
-#yfcmwxrutx .gt_first_grand_summary_row {
+#xcainycdbo .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1672,11 +1689,21 @@ draft_revised_stilly_age_comp.xlsx </a>.</p>
   border-top-color: #D3D3D3;
 }
 
-#yfcmwxrutx .gt_striped {
+#xcainycdbo .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#xcainycdbo .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#yfcmwxrutx .gt_table_body {
+#xcainycdbo .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1685,7 +1712,7 @@ draft_revised_stilly_age_comp.xlsx </a>.</p>
   border-bottom-color: #D3D3D3;
 }
 
-#yfcmwxrutx .gt_footnotes {
+#xcainycdbo .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1699,30 +1726,8 @@ draft_revised_stilly_age_comp.xlsx </a>.</p>
   border-right-color: #D3D3D3;
 }
 
-#yfcmwxrutx .gt_footnote {
+#xcainycdbo .gt_footnote {
   margin: 0px;
-  font-size: 90%;
-  padding-left: 4px;
-  padding-right: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#yfcmwxrutx .gt_sourcenotes {
-  color: #333333;
-  background-color: #FFFFFF;
-  border-bottom-style: none;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-}
-
-#yfcmwxrutx .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1730,78 +1735,106 @@ draft_revised_stilly_age_comp.xlsx </a>.</p>
   padding-right: 5px;
 }
 
-#yfcmwxrutx .gt_left {
+#xcainycdbo .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#xcainycdbo .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#xcainycdbo .gt_left {
   text-align: left;
 }
 
-#yfcmwxrutx .gt_center {
+#xcainycdbo .gt_center {
   text-align: center;
 }
 
-#yfcmwxrutx .gt_right {
+#xcainycdbo .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#yfcmwxrutx .gt_font_normal {
+#xcainycdbo .gt_font_normal {
   font-weight: normal;
 }
 
-#yfcmwxrutx .gt_font_bold {
+#xcainycdbo .gt_font_bold {
   font-weight: bold;
 }
 
-#yfcmwxrutx .gt_font_italic {
+#xcainycdbo .gt_font_italic {
   font-style: italic;
 }
 
-#yfcmwxrutx .gt_super {
+#xcainycdbo .gt_super {
   font-size: 65%;
 }
 
-#yfcmwxrutx .gt_footnote_marks {
-  font-style: italic;
-  font-weight: normal;
+#xcainycdbo .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
+  position: initial;
 }
 
-#yfcmwxrutx .gt_asterisk {
+#xcainycdbo .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#yfcmwxrutx .gt_indent_1 {
+#xcainycdbo .gt_indent_1 {
   text-indent: 5px;
 }
 
-#yfcmwxrutx .gt_indent_2 {
+#xcainycdbo .gt_indent_2 {
   text-indent: 10px;
 }
 
-#yfcmwxrutx .gt_indent_3 {
+#xcainycdbo .gt_indent_3 {
   text-indent: 15px;
 }
 
-#yfcmwxrutx .gt_indent_4 {
+#xcainycdbo .gt_indent_4 {
   text-indent: 20px;
 }
 
-#yfcmwxrutx .gt_indent_5 {
+#xcainycdbo .gt_indent_5 {
   text-indent: 25px;
 }
+
+#xcainycdbo .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#xcainycdbo div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
 </style>
-<table class="gt_table">
-  <thead class="gt_header">
-    <tr>
+<table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+  <thead>
+    <tr class="gt_heading">
       <td colspan="2" class="gt_heading gt_title gt_font_normal gt_bottom_border" style>JDF Age Comp using STL as Surrogate</td>
     </tr>
     
-  </thead>
-  <thead class="gt_col_headings">
-    <tr>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="&lt;strong&gt;Age&lt;/strong&gt;"><strong>Age</strong></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="&lt;strong&gt;Proportion&lt;/strong&gt;"><strong>Proportion</strong></th>
+    <tr class="gt_col_headings">
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Age"><span class='gt_from_md'><strong>Age</strong></span></th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Proportion"><span class='gt_from_md'><strong>Proportion</strong></span></th>
     </tr>
   </thead>
   <tbody class="gt_table_body">

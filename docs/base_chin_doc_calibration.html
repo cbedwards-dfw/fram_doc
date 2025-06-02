@@ -14,7 +14,7 @@
 
 <title>Calibration Processes</title>
 
-<script src="site_libs/header-attrs-2.26/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.28/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/yeti.min.css" rel="stylesheet" />
@@ -485,7 +485,6 @@ MathJax = {
   src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
 
 </script>
-<pre><code>## Warning: package &#39;knitr&#39; was built under R version 4.3.3</code></pre>
 <p>The primary purpose of a calibration pass is to create a CWT recovery
 data set that contains the number of CWT recoveries for stocks that were
 tagged in the base period with a simulated number of CWT recoveries for
@@ -493,7 +492,7 @@ those stocks that were not tagged during the base period.</p>
 <p>The CWTs are subjected to several expansions to turn them into
 surrogates for stock specific catches and escapements. These expanded
 recoveries are then utilized to
-<a href="https://framverse.github.io/fram_doc/calcs_glossary.html#Cohort_Analysis" target="_blank">reconstruct
+<a href="https://framverse.github.io/fram_doc/calcs_glossary.html###Cohort_Analysis" target="_blank">reconstruct
 cohorts</a> by adding catches and escapements for each age group with
 the goal of estimating stock- and age-specific pre-fishing abundances.
 Once abundances are available fishery specific exploitation rates can be
@@ -607,7 +606,7 @@ their past.</li>
 past.</li>
 <li>Net: Several fisheries with insufficient recoveries</li>
 </ul></li>
-<li><a href="https://framverse.github.io/fram_doc/calcs_glossary.html#Pacific_Fishery_Management_Council_(PFMC)" target="_blank">Pacific
+<li><a href="https://framverse.github.io/fram_doc/calcs_glossary.html###Pacific_Fishery_Management_Council_(PFMC)" target="_blank">Pacific
 Fishery Management Council (PFMC)</a> Fisheries: Much improved, despite
 the 2008-2009 restrictions.</li>
 </ul>
@@ -634,14 +633,14 @@ these recoveries in an output file called “errfile.txt”.</p>
 rates for each stock and fishery in the FRAM model. To this end, marked
 CWTs from base period years (brood years 2005-2008) were analyzed and
 summarized to
-<a href="https://framverse.github.io/fram_doc/calcs_glossary.html#Cohort_Analysis" target="_blank">reconstruct
+<a href="https://framverse.github.io/fram_doc/calcs_glossary.html###Cohort_Analysis" target="_blank">reconstruct
 cohorts</a>.<br> At the completion of the base data development process,
 each FRAM stock-age cohort is doubled, with half the cohort being
 assigned to “unmarked” and the other half to “marked” components to
 allow for processing of mark-selective fisheries in “forward-projection”
 runs of FRAM used in preseason fishery modeling. The final step in the
 calibration cycle is the development of a completed
-<a href="https://framverse.github.io/fram_doc/calcs_glossary.html#Base_Period" target="_blank">base
+<a href="https://framverse.github.io/fram_doc/calcs_glossary.html###Base_Period" target="_blank">base
 period</a> input file used by FRAM. This file contains stock abundances,
 time-age-fishery specific exploitation rates, maturation rates, growth
 rates, and various fishery related parameters such as hooking mortality
@@ -650,7 +649,7 @@ the input data and/or model structure. Examples include changes to
 stocks, fisheries, CWT groups, time structure, and growth, natural, and
 fishery related handling mortality rates. All of these elements
 influence the estimates of the cohort sizes calculated during
-<a href="https://framverse.github.io/fram_doc/calcs_glossary.html#Cohort_Analysis" target="_blank">
+<a href="https://framverse.github.io/fram_doc/calcs_glossary.html###Cohort_Analysis" target="_blank">
 cohorts analysis</a> and the corresponding estimates of exploitation
 rates.</p>
 <p>Cohort reconstruction involves several steps described below and
@@ -690,7 +689,7 @@ Calibration Overview
 <h3>Variables and Notation</h3>
 <ul>
 <li><p><strong>a:</strong>
-<a href="https://framverse.github.io/fram_doc/calcs_glossary.html#Age" target="_blank">Age</a>
+<a href="https://framverse.github.io/fram_doc/calcs_glossary.html###Age" target="_blank">Age</a>
 in years (2 to 5).</p></li>
 <li><p><strong>AEQ<sub>s,a,t</sub>:</strong> Adult Equivalence by stock,
 age, and time step. The probability that a fish will survive to spawn in
@@ -699,7 +698,7 @@ calibration output. For more information see
 <a href="https://framverse.github.io/fram_doc/base_chin_doc_data.html#Adult_Equivalency_(AEQ)_Mortality_Rates" target="_blank">AEQ
 Mortality Rates</a> in the Data chapter.</p></li>
 <li><p><strong>BPEscape<sub>s</sub>:</strong>Marked as well as total
-<a href="https://framverse.github.io/fram_doc/calcs_glossary.html#Escapement" target="_blank">escapements</a>
+<a href="https://framverse.github.io/fram_doc/calcs_glossary.html###Escapement" target="_blank">escapements</a>
 were provided by regional experts for each Chinook stock.For the purpose
 of calibration, escapement includes freshwater catch. Escapements are a
 calibration input. For more escapement information see
@@ -711,21 +710,21 @@ For more information see
 <a href="https://framverse.github.io/fram_doc/base_chin_doc_data.html#Landed_Catch" target="_blank">Landed
 Catch</a> in the “Data” chapter.</p></li>
 <li><p><strong>BPPTCatch<sub>s,a,f,t</sub>:</strong> Base period
-<a href="https://framverse.github.io/fram_doc/calcs_glossary.html#Coded-Wire_Tag_(CWT)" target="_blank">CWT</a>
+<a href="https://framverse.github.io/fram_doc/calcs_glossary.html###Coded-Wire_Tag_(CWT)" target="_blank">CWT</a>
 recoveries in
-<a href="https://framverse.github.io/fram_doc/calcs_glossary.html#Pre-terminal_Fishery" target="_blank">preterminal</a>
+<a href="https://framverse.github.io/fram_doc/calcs_glossary.html###Pre-terminal_Fishery" target="_blank">preterminal</a>
 fisheries by stock, age, and time step. For more information see
 <a href="https://framverse.github.io/fram_doc/base_chin_doc_data.html#CWTs" target="_blank">CWTs</a>
 in the Data chapter.</p></li>
 <li><p><strong>BPTermCatch<sub>s,a,f,t</sub>:</strong> Base period
-<a href="https://framverse.github.io/fram_doc/calcs_glossary.html#Coded-Wire_Tag_(CWT)" title="blank" >CWT</a>
+<a href="https://framverse.github.io/fram_doc/calcs_glossary.html###Coded-Wire_Tag_(CWT)" title="blank" >CWT</a>
 recoveries in
-<a href="https://framverse.github.io/fram_doc/calcs_glossary.html#Terminal_Fishery" target="_blank">terminal</a>
+<a href="https://framverse.github.io/fram_doc/calcs_glossary.html###Terminal_Fishery" target="_blank">terminal</a>
 fisheries by stock, age, and time step. For more information see
 <a href="https://framverse.github.io/fram_doc/base_chin_doc_data.html#CWTs" target="_blank">CWTs</a>
 in the Data chapter.</p></li>
 <li><p><strong>CNRLeg<sub>s,a,f,t</sub>:</strong>
-<a href="https://framverse.github.io/fram_doc/calcs_glossary.html#Legal-sized" target="_blank">Legal
+<a href="https://framverse.github.io/fram_doc/calcs_glossary.html###Legal-sized" target="_blank">Legal
 size</a> release mortality of a stock and age in a non-retention fishery
 and time step. This is calculated during calibration. For more
 information see
@@ -737,7 +736,7 @@ during calibration. For more information see
 <a href="https://framverse.github.io/fram_doc/base_chin_doc_data.html#Incidental_Mortality" target="_blank">Incidental
 Mortality</a> in the Data chapter.</p></li>
 <li><p><strong>CNRSub<sub>s,a,f,t</sub>:</strong>
-<a href="https://framverse.github.io/fram_doc/calcs_glossary.html#Sublegal" target="_blank">Sublegal
+<a href="https://framverse.github.io/fram_doc/calcs_glossary.html###Sublegal" target="_blank">Sublegal
 size</a> release mortality of a stock and age in a non-retention fishery
 and time step. This is calculated during calibration. For more
 information see
@@ -746,7 +745,7 @@ Mortality</a> in the Data chapter.</p></li>
 <li><p><strong>Cohort<sub>s,a,TerminalType,t</sub>:</strong> Pre-fishing
 abundance of a stock at age a and time step t. If terminal type =0 then
 abundance is before
-<a href="https://framverse.github.io/fram_doc/calcs_glossary.html#Maturation" target="_blank">maturation</a>,
+<a href="https://framverse.github.io/fram_doc/calcs_glossary.html###Maturation" target="_blank">maturation</a>,
 if terminal type =1 then after maturation. The cohort is a calibration
 output, calculated during cohort reconstruction procedures. For more
 information see
@@ -764,19 +763,19 @@ is a data input. For more information see
 in the Data chapter.</p></li>
 <li><p><strong>CWTEscape<sub>s,a,t</sub>:</strong> CWTs by stock, age,
 and time step recovered in
-<a href="https://framverse.github.io/fram_doc/calcs_glossary.html#Escapement" target="_blank">escapement</a>
+<a href="https://framverse.github.io/fram_doc/calcs_glossary.html###Escapement" target="_blank">escapement</a>
 and freshwater fisheries expanded for sampling fraction. This is a data
 input. For more information see
 <a href="https://framverse.github.io/fram_doc/base_chin_doc_data.html#CWTs" target="_blank">CWTs</a>
 in the Data chapter.</p></li>
 <li><p><strong>DropOff<sub>f</sub>:</strong>
-<a href="https://framverse.github.io/fram_doc/calcs_glossary.html#Drop-off_Mortality" target="_blank">Dropoff</a>
+<a href="https://framverse.github.io/fram_doc/calcs_glossary.html###Drop-off_Mortality" target="_blank">Dropoff</a>
 mortality rate by fishery. For more information see
 <a href="https://framverse.github.io/fram_doc/base_chin_doc_data.html#Incidental_Mortality" target="_blank">Incidental
 Mortality</a> in the Data chapter.</p></li>
 <li><p><strong>ExpRate<sub>s,a,f,t</sub>:</strong> The fraction of the
 vulnerable
-(<a href="https://framverse.github.io/fram_doc/calcs_glossary.html#Legal-sized" target="_blank">legal</a>)
+(<a href="https://framverse.github.io/fram_doc/calcs_glossary.html###Legal-sized" target="_blank">legal</a>)
 cohort taken in a fishery. It is calculated as the mortality of a stock
 and age in a fishery and time step divided by the abundance of the stock
 and age. The denominator, the abundance, is the sum of all fisheries
@@ -800,8 +799,8 @@ escapement expansion</a> and the
 <a href="base_chin_doc_calibration.html#Expand_CWTs_to_Match_Fishery_Catch" target="_blank">
 fishery expansion</a>.</p></li>
 <li><p><strong>LegalEnc<sub>s,a,f,t</sub>:</strong>
-<a href="https://framverse.github.io/fram_doc/calcs_glossary.html#Legal-sized" target="_blank">Legal</a>
-<a href="https://framverse.github.io/fram_doc/calcs_glossary.html#Encounter" target="_blank">encounters</a>
+<a href="https://framverse.github.io/fram_doc/calcs_glossary.html###Legal-sized" target="_blank">Legal</a>
+<a href="https://framverse.github.io/fram_doc/calcs_glossary.html###Encounter" target="_blank">encounters</a>
 in a non-retention fishery. Stock specific encounters are calculated
 during the calibration by splitting total encounters into stocks and
 ages. For more information see
@@ -809,8 +808,8 @@ ages. For more information see
 Retention Encounters</a> in the Data chapter.</p></li>
 <li><p><strong>LegalProp<sub>s,a,f,t</sub>:</strong> Proportion of the
 cohort which is above the
-<a href="https://framverse.github.io/fram_doc/calcs_glossary.html#Legal-sized" target="_blank">legal</a>
-<a href="https://framverse.github.io/fram_doc/calcs_glossary.html#Size_Limit" target="_blank">size
+<a href="https://framverse.github.io/fram_doc/calcs_glossary.html###Legal-sized" target="_blank">legal</a>
+<a href="https://framverse.github.io/fram_doc/calcs_glossary.html###Size_Limit" target="_blank">size
 limit</a> by stock, age, fishery, and time step. The legal proportion is
 caluclated during the calibration. For more information about the
 computation of the proportion legal/sublegal of a stock-age using the
@@ -819,13 +818,13 @@ Von Bertalanffy growth equation see
 Size Limit Calculations</a>.</p></li>
 <li><p><strong>LegalRelaseMortalityRate_f:</strong> Release mortality
 rate of
-<a href="https://framverse.github.io/fram_doc/calcs_glossary.html#Legal-sized" target="_blank">legal
+<a href="https://framverse.github.io/fram_doc/calcs_glossary.html###Legal-sized" target="_blank">legal
 sized</a> Chinook in a fishery. This is a calibration input. For more
 information see
 <a href="https://framverse.github.io/fram_doc/base_chin_doc_data.html#Incidental_Mortality" target="_blank">Incidental
 Mortality</a> in the Data chapter.</p></li>
 <li><p><strong>MatCohort<sub>s,a,t</sub>:</strong> The
-<a href="https://framverse.github.io/fram_doc/calcs_glossary.html#Maturation" target="_blank">mature</a>
+<a href="https://framverse.github.io/fram_doc/calcs_glossary.html###Maturation" target="_blank">mature</a>
 cohort, i.e., the number of fish by stock, age, and time step destined
 to spawn in the current year in the absence of further fishing. This is
 calculated during calibration. For more information see
@@ -833,7 +832,7 @@ calculated during calibration. For more information see
 Rates</a> in the Data chapter.</p></li>
 <li><p><strong>MatRate<sub>s,a,t</sub>:</strong> The fraction of the
 cohort by stock and age that
-<a href="https://framverse.github.io/fram_doc/calcs_glossary.html#Maturation" target="_blank">matures</a>
+<a href="https://framverse.github.io/fram_doc/calcs_glossary.html###Maturation" target="_blank">matures</a>
 in a given time step. This is a calibration output. For more information
 see
 <a href="https://framverse.github.io/fram_doc/base_chin_doc_data.html#Maturation_Rates" target="_blank">Maturation
@@ -844,7 +843,7 @@ of the mean length using the Von Bertalanffy growth equation see
 <a href="https://framverse.github.io/fram_doc/calcs_data_chin.html#45_Size_Limit_Evaluations">
 Size Limit Calculations</a>.</p></li>
 <li><p><strong>MinSize<sub>a,f,t</sub>:</strong> Minimum
-<a href="https://framverse.github.io/fram_doc/calcs_glossary.html#Size_Limit" target="_blank">size
+<a href="https://framverse.github.io/fram_doc/calcs_glossary.html###Size_Limit" target="_blank">size
 limit</a> in a fishery by age, fishery, and time step. The age subscript
 is carried but not used in computations. This is a calibration input.
 For more information see
@@ -855,12 +854,12 @@ observed catch in a fishery that can be accounted for by stocks in the
 model. It is frequently referred to as the Mode Stock Proportion (MSP).
 This can either be a data input or output. For the calculation of the
 model ratio see
-<a href = "https://framverse.github.io/fram_doc/calcs_glossary.html#Model-Stock_Proportion_(MSP)" target = "_blank" >Model
+<a href = "https://framverse.github.io/fram_doc/calcs_glossary.html###Model-Stock_Proportion_(MSP)" target = "_blank" >Model
 Stock Proportion(MSP) </a>.</p></li>
 <li><p><strong>MSP<sub>f,t</sub>:</strong> Model-stock proportion.
 Percentage of a fishery’s total catch that is accounted for by stocks
 modeled in FRAM. For the calculation of the model stock proportion see
-<a href = "https://framverse.github.io/fram_doc/calcs_glossary.html#Model-Stock_Proportion_(MSP)" target = "_blank" >Model
+<a href = "https://framverse.github.io/fram_doc/calcs_glossary.html###Model-Stock_Proportion_(MSP)" target = "_blank" >Model
 Stock Proportion (MSP) </a>.</p></li>
 <li><p><strong>PEF<sub>s</sub>:</strong> Stock specific Production
 Expansion Factor. The ratio of total stock escapement to the escapement
@@ -869,19 +868,19 @@ more information see
 <a href = "https://framverse.github.io/fram_doc/base_chin_doc_calibration.html#Expand_CWTs_to_Total_Production" target = "_blank" >Expand
 CWTs to Total Production</a>.</p></li>
 <li><p><strong>PropLegCatch<sub>s,a</sub></strong> The proportion of the
-<a href="https://framverse.github.io/fram_doc/calcs_glossary.html#Legal-sized" target="_blank">legal</a>
+<a href="https://framverse.github.io/fram_doc/calcs_glossary.html###Legal-sized" target="_blank">legal</a>
 catch in a fishery and time step that is of a given stock and age. This
 parameter is calculated during the calibration.</p></li>
 <li><p><strong>PropSubCatch<sub>s,a</sub></strong> The proportion of the
-<a href="https://framverse.github.io/fram_doc/calcs_glossary.html#Sublegal" target="_blank">sublegal</a>
+<a href="https://framverse.github.io/fram_doc/calcs_glossary.html###Sublegal" target="_blank">sublegal</a>
 encounters in a fishery and time step that is of a given stock and age.
 This parameter is calculated during the calibration.</p></li>
 <li><p><strong>PTCohort<sub>s,a,t</sub>:</strong> The
-<a href="https://framverse.github.io/fram_doc/calcs_glossary.html#Pre-terminal_Fishery" target="_blank">preterminal</a>
+<a href="https://framverse.github.io/fram_doc/calcs_glossary.html###Pre-terminal_Fishery" target="_blank">preterminal</a>
 (immature) ocean cohort size by stock, age, and time step. This
 parameter is calculated during the calibration.</p></li>
 <li><p><strong>PTER<sub>s,a,f,t</sub>:</strong> Exploitation rate in
-<a href="https://framverse.github.io/fram_doc/calcs_glossary.html#Pre-terminal_Fishery" target="_blank">preterminal</a>
+<a href="https://framverse.github.io/fram_doc/calcs_glossary.html###Pre-terminal_Fishery" target="_blank">preterminal</a>
 fishery by stock, age, and time step. This parameter is calculated
 during the calibration. This parameter is output to the calibration
 database.For more information see
@@ -889,7 +888,7 @@ database.For more information see
 Period Exploitation Rates</a> in the Data chapter.</p></li>
 <li><p><strong>PTMorts<sub>s,a,t</sub>:</strong> Total moralities of
 CWTed fish in
-<a href="https://framverse.github.io/fram_doc/calcs_glossary.html#Pre-terminal_Fishery" target="_blank">preterminal</a>
+<a href="https://framverse.github.io/fram_doc/calcs_glossary.html###Pre-terminal_Fishery" target="_blank">preterminal</a>
 fisheries by stock, age, and time step. This parameter is calculated
 during the calibration.</p></li>
 <li><p><strong>s:</strong> Stock number. There are currently 39
@@ -899,21 +898,21 @@ during the calibration.</p></li>
 in the Data chapter.</p></li>
 <li><p><strong>ScaleFactor<sub>f,t</sub>:</strong> Fishery and time step
 specific
-<a href="https://framverse.github.io/fram_doc/calcs_glossary.html#Fishery_Scaler" target="_blank">ratio
+<a href="https://framverse.github.io/fram_doc/calcs_glossary.html###Fishery_Scaler" target="_blank">ratio
 of fishery exploitation</a> rate during the CWT recovery year to the
 fishery exploitation rate during the base period. This is a calibration
 input derived during iterative validation runs. For more information see
 <a href="https://framverse.github.io/fram_doc/base_chin_doc_data.html#Fishery_Scalers" target="_blank">Fishery
 Scalers</a> in the Data chapter.</p></li>
 <li><p><strong>Shakers<sub>s,a,f,t</sub>:</strong> Total mortalities of
-<a href="https://framverse.github.io/fram_doc/calcs_glossary.html#Sublegal" target="_blank">sublegal</a>
+<a href="https://framverse.github.io/fram_doc/calcs_glossary.html###Sublegal" target="_blank">sublegal</a>
 fish by stock, age, fishery, and time step. Shakers is calculated during
 the calibration. For a calculation of this parameter refer to
 <a href="https://framverse.github.io/fram_doc/base_chin_doc_appendix.html#Sublegal_Stock-,_Age-Composition" target="_blank">Sublegal
 Stock-, Age-Composition</a>.</p></li>
 <li><p><strong>ShakerReleaseMortalityRate<sub>f</sub>:</strong> Fishery
 specific shaker
-(<a href="https://framverse.github.io/fram_doc/calcs_glossary.html#Sublegal" target="_blank">sublegal</a>)
+(<a href="https://framverse.github.io/fram_doc/calcs_glossary.html###Sublegal" target="_blank">sublegal</a>)
 mortality rate. This is a calibration input. For more information see
 <a href="https://framverse.github.io/fram_doc/base_chin_doc_data.html#Incidental_Mortality" target="_blank">Incidental
 Mortality</a> in the Data chapter.</p></li>
@@ -923,7 +922,7 @@ more information see
 <a href="https://framverse.github.io/fram_doc/base_chin_doc_data.html#Natural_Mortality" target="_blank">Natural
 Mortality</a> in the Data chapter.</p></li>
 <li><p><strong>SublegalEnc<sub>s,a,f,t</sub>:</strong>
-<a href="https://framverse.github.io/fram_doc/calcs_glossary.html#Sublegal" target="_blank">Sublegal</a>
+<a href="https://framverse.github.io/fram_doc/calcs_glossary.html###Sublegal" target="_blank">Sublegal</a>
 encounters in a non-retention fishery. This is calculated during the
 calibration. For a calculation of this parameter refer to
 <a href="https://framverse.github.io/fram_doc/base_chin_doc_appendix.html#Sublegal_Stock-,_Age-Composition" target="_blank">Sublegal
@@ -931,40 +930,40 @@ Stock-, Age-Composition</a>.</p></li>
 <li><p><strong>SubLegProp<sub>s,a,f,t</sub>:</strong> Proportion of the
 total cohort size by stock and age (terminal or preterminal) which is
 below the
-<a href="https://framverse.github.io/fram_doc/calcs_glossary.html#Legal-sized" target="_blank">legal</a>
+<a href="https://framverse.github.io/fram_doc/calcs_glossary.html###Legal-sized" target="_blank">legal</a>
 size limit in a given fishery and time step. This is calculated during
 the calibration.</p></li>
 <li><p><strong>t:</strong> Time step. There are 3
 <a href="https://framverse.github.io/fram_doc/calcs_data_chin.html#13_Time_Steps" target="_blank">time
 steps </a> per ‘year’: Oct – Apr, May – June, and July – Sept.</p></li>
 <li><p><strong>TargEncRate<sub>f,t</sub>:</strong>
-<a href="https://framverse.github.io/fram_doc/calcs_glossary.html#Sublegal" target="_blank">Sublegal</a>
+<a href="https://framverse.github.io/fram_doc/calcs_glossary.html###Sublegal" target="_blank">Sublegal</a>
 to
-<a href="https://framverse.github.io/fram_doc/calcs_glossary.html#Legal-sized" target="_blank">legal</a>
+<a href="https://framverse.github.io/fram_doc/calcs_glossary.html###Legal-sized" target="_blank">legal</a>
 ratio in a fishery and time step. This rate is used to calculate the
 number of sublegal encounters when the legal retained catch is known.
 This is a calibration input. For more information see
 <a href="https://framverse.github.io/fram_doc/base_chin_doc_data.html#Target_Encounter_Rates" target="_blank">Target
 Encounter Rates</a> in the Data chapter.</p></li>
 <li><p><strong>TermER<sub>s,a,f,t</sub>:</strong> Exploitation rate in
-<a href="https://framverse.github.io/fram_doc/calcs_glossary.html#Terminal_Fishery" target="_blank">terminal</a>
+<a href="https://framverse.github.io/fram_doc/calcs_glossary.html###Terminal_Fishery" target="_blank">terminal</a>
 fishery by stock, age, and time step. This is derived though calibration
 calculations and becomes a calibration output. For more information see
 <a href="https://framverse.github.io/fram_doc/base_chin_doc_data.html#Base_Period_Exploitation_Rates" target="_blank">Base
 Period Exploitation Rates</a> in the Data chapter.</p></li>
 <li><p><strong>TMorts<sub>s,a,t</sub>:</strong> Total mortalities
 (landed plus incidental) in
-<a href="https://framverse.github.io/fram_doc/calcs_glossary.html#Terminal_Fishery" target="_blank">terminal</a>
+<a href="https://framverse.github.io/fram_doc/calcs_glossary.html###Terminal_Fishery" target="_blank">terminal</a>
 fisheries by stock, age, and time step. It is calculated during
 calibration.</p></li>
 <li><p><strong>TotalBPEsc<sub>s</sub>:</strong> Adult total
-<a href="https://framverse.github.io/fram_doc/calcs_glossary.html#Escapement" target="_blank">escapement</a>
+<a href="https://framverse.github.io/fram_doc/calcs_glossary.html###Escapement" target="_blank">escapement</a>
 by stock during the base period. This is a calibration input. For more
 information see
 <a href="https://framverse.github.io/fram_doc/base_chin_doc_data.html#Escapements" target="_blank">Escapements</a>
 in the Data chapter.</p></li>
 <li><p><strong>TotalCohort<sub>s,a,t</sub>:</strong> The total
-<a href="https://framverse.github.io/fram_doc/calcs_glossary.html#Cohort_Size" target="_blank">cohort</a>
+<a href="https://framverse.github.io/fram_doc/calcs_glossary.html###Cohort_Size" target="_blank">cohort</a>
 available at the start of each time period before natural mortality by
 stock, age, and time step. This is a a calibration output. For more
 information see
@@ -1017,7 +1016,7 @@ $$</span></p>
 FishExpansion_{f,t}=\frac{Catch_{f,t}}{CWTCatch_{f,t}}
 $$</span></p>
 <p>The
-<a href="https://framverse.github.io/fram_doc/calcs_glossary.html#Model-Stock_Proportion_(MSP)" target="_blank">MSP</a>
+<a href="https://framverse.github.io/fram_doc/calcs_glossary.html###Model-Stock_Proportion_(MSP)" target="_blank">MSP</a>
 is the percentage of a fishery accounted for by stocks included in the
 model. Chinook FRAM does not contain all the stocks impacted by FRAM
 fisheries. A portion of the stocks, particularly those affecting
@@ -1107,7 +1106,7 @@ fishery expansion factor was calculated as in equation
 <h5>Chinook Technical Committee (CTC) MSP</h5>
 <p>For several northern fisheries, we used output from the 2014
 calibration (CLB 1402) of the
-<a href="https://framverse.github.io/fram_doc/calcs_glossary.html#Pacific_Salmon_Commission_(PSC)" target="_blank">PSC</a>
+<a href="https://framverse.github.io/fram_doc/calcs_glossary.html###Pacific_Salmon_Commission_(PSC)" target="_blank">PSC</a>
 Chinook model to calculate fishery model stock proportions. Details of
 this calibrationcan can be found in PSC Joint Chinook Technical
 Committee report <a
@@ -1177,7 +1176,7 @@ the<a href = "https://framverse.github.io/fram_doc/base_chin_doc_calibration.htm
 fishery expansion </a> described in the last two paragraphs, CWTs are
 subjected to two other expansions. <br></p>
 <p>The first expansion occurs in
-<a href="https://framverse.github.io/fram_doc/calcs_glossary.html#Regional_Mark_Information_System_(RMIS)" target="_blank">
+<a href="https://framverse.github.io/fram_doc/calcs_glossary.html###Regional_Mark_Information_System_(RMIS)" target="_blank">
 RMIS</a> and is called a sampling expansion. It is calculated as the
 total catch in a fishery/time step divided by the sampled catch in a
 fishery/time step. This results in the number of CWTs that would have
@@ -1199,23 +1198,23 @@ within RMIS and is a function of the total number of Chinook caught
 during the sampling period divided by the number of Chinook sampled
 during the sampling period. The following information comes from <a
 href="https://www.rmpc.org/">RMIS</a> Catch/Sample queries.</p>
-<div id="uhhurvxxrg" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#uhhurvxxrg table {
+<div id="uwymvczbkp" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#uwymvczbkp table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#uhhurvxxrg thead, #uhhurvxxrg tbody, #uhhurvxxrg tfoot, #uhhurvxxrg tr, #uhhurvxxrg td, #uhhurvxxrg th {
+#uwymvczbkp thead, #uwymvczbkp tbody, #uwymvczbkp tfoot, #uwymvczbkp tr, #uwymvczbkp td, #uwymvczbkp th {
   border-style: none;
 }
 
-#uhhurvxxrg p {
+#uwymvczbkp p {
   margin: 0;
   padding: 0;
 }
 
-#uhhurvxxrg .gt_table {
+#uwymvczbkp .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1241,12 +1240,12 @@ href="https://www.rmpc.org/">RMIS</a> Catch/Sample queries.</p>
   border-left-color: #D3D3D3;
 }
 
-#uhhurvxxrg .gt_caption {
+#uwymvczbkp .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#uhhurvxxrg .gt_title {
+#uwymvczbkp .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1258,7 +1257,7 @@ href="https://www.rmpc.org/">RMIS</a> Catch/Sample queries.</p>
   border-bottom-width: 0;
 }
 
-#uhhurvxxrg .gt_subtitle {
+#uwymvczbkp .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1270,7 +1269,7 @@ href="https://www.rmpc.org/">RMIS</a> Catch/Sample queries.</p>
   border-top-width: 0;
 }
 
-#uhhurvxxrg .gt_heading {
+#uwymvczbkp .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1282,13 +1281,13 @@ href="https://www.rmpc.org/">RMIS</a> Catch/Sample queries.</p>
   border-right-color: #D3D3D3;
 }
 
-#uhhurvxxrg .gt_bottom_border {
+#uwymvczbkp .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#uhhurvxxrg .gt_col_headings {
+#uwymvczbkp .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1303,7 +1302,7 @@ href="https://www.rmpc.org/">RMIS</a> Catch/Sample queries.</p>
   border-right-color: #D3D3D3;
 }
 
-#uhhurvxxrg .gt_col_heading {
+#uwymvczbkp .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1323,7 +1322,7 @@ href="https://www.rmpc.org/">RMIS</a> Catch/Sample queries.</p>
   overflow-x: hidden;
 }
 
-#uhhurvxxrg .gt_column_spanner_outer {
+#uwymvczbkp .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1335,15 +1334,15 @@ href="https://www.rmpc.org/">RMIS</a> Catch/Sample queries.</p>
   padding-right: 4px;
 }
 
-#uhhurvxxrg .gt_column_spanner_outer:first-child {
+#uwymvczbkp .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#uhhurvxxrg .gt_column_spanner_outer:last-child {
+#uwymvczbkp .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#uhhurvxxrg .gt_column_spanner {
+#uwymvczbkp .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1355,11 +1354,11 @@ href="https://www.rmpc.org/">RMIS</a> Catch/Sample queries.</p>
   width: 100%;
 }
 
-#uhhurvxxrg .gt_spanner_row {
+#uwymvczbkp .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#uhhurvxxrg .gt_group_heading {
+#uwymvczbkp .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1385,7 +1384,7 @@ href="https://www.rmpc.org/">RMIS</a> Catch/Sample queries.</p>
   text-align: left;
 }
 
-#uhhurvxxrg .gt_empty_group_heading {
+#uwymvczbkp .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1400,15 +1399,15 @@ href="https://www.rmpc.org/">RMIS</a> Catch/Sample queries.</p>
   vertical-align: middle;
 }
 
-#uhhurvxxrg .gt_from_md > :first-child {
+#uwymvczbkp .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#uhhurvxxrg .gt_from_md > :last-child {
+#uwymvczbkp .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#uhhurvxxrg .gt_row {
+#uwymvczbkp .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1427,7 +1426,7 @@ href="https://www.rmpc.org/">RMIS</a> Catch/Sample queries.</p>
   overflow-x: hidden;
 }
 
-#uhhurvxxrg .gt_stub {
+#uwymvczbkp .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1440,7 +1439,7 @@ href="https://www.rmpc.org/">RMIS</a> Catch/Sample queries.</p>
   padding-right: 5px;
 }
 
-#uhhurvxxrg .gt_stub_row_group {
+#uwymvczbkp .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1454,15 +1453,15 @@ href="https://www.rmpc.org/">RMIS</a> Catch/Sample queries.</p>
   vertical-align: top;
 }
 
-#uhhurvxxrg .gt_row_group_first td {
+#uwymvczbkp .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#uhhurvxxrg .gt_row_group_first th {
+#uwymvczbkp .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#uhhurvxxrg .gt_summary_row {
+#uwymvczbkp .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1472,16 +1471,16 @@ href="https://www.rmpc.org/">RMIS</a> Catch/Sample queries.</p>
   padding-right: 5px;
 }
 
-#uhhurvxxrg .gt_first_summary_row {
+#uwymvczbkp .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#uhhurvxxrg .gt_first_summary_row.thick {
+#uwymvczbkp .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#uhhurvxxrg .gt_last_summary_row {
+#uwymvczbkp .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1491,7 +1490,7 @@ href="https://www.rmpc.org/">RMIS</a> Catch/Sample queries.</p>
   border-bottom-color: #D3D3D3;
 }
 
-#uhhurvxxrg .gt_grand_summary_row {
+#uwymvczbkp .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1501,7 +1500,7 @@ href="https://www.rmpc.org/">RMIS</a> Catch/Sample queries.</p>
   padding-right: 5px;
 }
 
-#uhhurvxxrg .gt_first_grand_summary_row {
+#uwymvczbkp .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1511,7 +1510,7 @@ href="https://www.rmpc.org/">RMIS</a> Catch/Sample queries.</p>
   border-top-color: #D3D3D3;
 }
 
-#uhhurvxxrg .gt_last_grand_summary_row_top {
+#uwymvczbkp .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1521,11 +1520,11 @@ href="https://www.rmpc.org/">RMIS</a> Catch/Sample queries.</p>
   border-bottom-color: #D3D3D3;
 }
 
-#uhhurvxxrg .gt_striped {
+#uwymvczbkp .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#uhhurvxxrg .gt_table_body {
+#uwymvczbkp .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1534,7 +1533,7 @@ href="https://www.rmpc.org/">RMIS</a> Catch/Sample queries.</p>
   border-bottom-color: #D3D3D3;
 }
 
-#uhhurvxxrg .gt_footnotes {
+#uwymvczbkp .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1548,7 +1547,7 @@ href="https://www.rmpc.org/">RMIS</a> Catch/Sample queries.</p>
   border-right-color: #D3D3D3;
 }
 
-#uhhurvxxrg .gt_footnote {
+#uwymvczbkp .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1557,7 +1556,7 @@ href="https://www.rmpc.org/">RMIS</a> Catch/Sample queries.</p>
   padding-right: 5px;
 }
 
-#uhhurvxxrg .gt_sourcenotes {
+#uwymvczbkp .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1571,7 +1570,7 @@ href="https://www.rmpc.org/">RMIS</a> Catch/Sample queries.</p>
   border-right-color: #D3D3D3;
 }
 
-#uhhurvxxrg .gt_sourcenote {
+#uwymvczbkp .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1579,64 +1578,73 @@ href="https://www.rmpc.org/">RMIS</a> Catch/Sample queries.</p>
   padding-right: 5px;
 }
 
-#uhhurvxxrg .gt_left {
+#uwymvczbkp .gt_left {
   text-align: left;
 }
 
-#uhhurvxxrg .gt_center {
+#uwymvczbkp .gt_center {
   text-align: center;
 }
 
-#uhhurvxxrg .gt_right {
+#uwymvczbkp .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#uhhurvxxrg .gt_font_normal {
+#uwymvczbkp .gt_font_normal {
   font-weight: normal;
 }
 
-#uhhurvxxrg .gt_font_bold {
+#uwymvczbkp .gt_font_bold {
   font-weight: bold;
 }
 
-#uhhurvxxrg .gt_font_italic {
+#uwymvczbkp .gt_font_italic {
   font-style: italic;
 }
 
-#uhhurvxxrg .gt_super {
+#uwymvczbkp .gt_super {
   font-size: 65%;
 }
 
-#uhhurvxxrg .gt_footnote_marks {
+#uwymvczbkp .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#uhhurvxxrg .gt_asterisk {
+#uwymvczbkp .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#uhhurvxxrg .gt_indent_1 {
+#uwymvczbkp .gt_indent_1 {
   text-indent: 5px;
 }
 
-#uhhurvxxrg .gt_indent_2 {
+#uwymvczbkp .gt_indent_2 {
   text-indent: 10px;
 }
 
-#uhhurvxxrg .gt_indent_3 {
+#uwymvczbkp .gt_indent_3 {
   text-indent: 15px;
 }
 
-#uhhurvxxrg .gt_indent_4 {
+#uwymvczbkp .gt_indent_4 {
   text-indent: 20px;
 }
 
-#uhhurvxxrg .gt_indent_5 {
+#uwymvczbkp .gt_indent_5 {
   text-indent: 25px;
+}
+
+#uwymvczbkp .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#uwymvczbkp div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
 }
 </style>
 <table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
@@ -1672,23 +1680,23 @@ of the Coded Wire Tag Program (Nandor, 2009)</a>.</p>
 <p>For the example tag, the table below demonstrates that the brood year
 expansion applied should be 1.02. The brood year expanded value of the
 example recovery becomes 7.11 (6.97 * 1.02).</p>
-<div id="qseojspvfh" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#qseojspvfh table {
+<div id="mjtpqstgaf" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#mjtpqstgaf table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#qseojspvfh thead, #qseojspvfh tbody, #qseojspvfh tfoot, #qseojspvfh tr, #qseojspvfh td, #qseojspvfh th {
+#mjtpqstgaf thead, #mjtpqstgaf tbody, #mjtpqstgaf tfoot, #mjtpqstgaf tr, #mjtpqstgaf td, #mjtpqstgaf th {
   border-style: none;
 }
 
-#qseojspvfh p {
+#mjtpqstgaf p {
   margin: 0;
   padding: 0;
 }
 
-#qseojspvfh .gt_table {
+#mjtpqstgaf .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1714,12 +1722,12 @@ example recovery becomes 7.11 (6.97 * 1.02).</p>
   border-left-color: #D3D3D3;
 }
 
-#qseojspvfh .gt_caption {
+#mjtpqstgaf .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#qseojspvfh .gt_title {
+#mjtpqstgaf .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1731,7 +1739,7 @@ example recovery becomes 7.11 (6.97 * 1.02).</p>
   border-bottom-width: 0;
 }
 
-#qseojspvfh .gt_subtitle {
+#mjtpqstgaf .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1743,7 +1751,7 @@ example recovery becomes 7.11 (6.97 * 1.02).</p>
   border-top-width: 0;
 }
 
-#qseojspvfh .gt_heading {
+#mjtpqstgaf .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1755,13 +1763,13 @@ example recovery becomes 7.11 (6.97 * 1.02).</p>
   border-right-color: #D3D3D3;
 }
 
-#qseojspvfh .gt_bottom_border {
+#mjtpqstgaf .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#qseojspvfh .gt_col_headings {
+#mjtpqstgaf .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1776,7 +1784,7 @@ example recovery becomes 7.11 (6.97 * 1.02).</p>
   border-right-color: #D3D3D3;
 }
 
-#qseojspvfh .gt_col_heading {
+#mjtpqstgaf .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1796,7 +1804,7 @@ example recovery becomes 7.11 (6.97 * 1.02).</p>
   overflow-x: hidden;
 }
 
-#qseojspvfh .gt_column_spanner_outer {
+#mjtpqstgaf .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1808,15 +1816,15 @@ example recovery becomes 7.11 (6.97 * 1.02).</p>
   padding-right: 4px;
 }
 
-#qseojspvfh .gt_column_spanner_outer:first-child {
+#mjtpqstgaf .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#qseojspvfh .gt_column_spanner_outer:last-child {
+#mjtpqstgaf .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#qseojspvfh .gt_column_spanner {
+#mjtpqstgaf .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1828,11 +1836,11 @@ example recovery becomes 7.11 (6.97 * 1.02).</p>
   width: 100%;
 }
 
-#qseojspvfh .gt_spanner_row {
+#mjtpqstgaf .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#qseojspvfh .gt_group_heading {
+#mjtpqstgaf .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1858,7 +1866,7 @@ example recovery becomes 7.11 (6.97 * 1.02).</p>
   text-align: left;
 }
 
-#qseojspvfh .gt_empty_group_heading {
+#mjtpqstgaf .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1873,15 +1881,15 @@ example recovery becomes 7.11 (6.97 * 1.02).</p>
   vertical-align: middle;
 }
 
-#qseojspvfh .gt_from_md > :first-child {
+#mjtpqstgaf .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#qseojspvfh .gt_from_md > :last-child {
+#mjtpqstgaf .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#qseojspvfh .gt_row {
+#mjtpqstgaf .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1900,7 +1908,7 @@ example recovery becomes 7.11 (6.97 * 1.02).</p>
   overflow-x: hidden;
 }
 
-#qseojspvfh .gt_stub {
+#mjtpqstgaf .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1913,7 +1921,7 @@ example recovery becomes 7.11 (6.97 * 1.02).</p>
   padding-right: 5px;
 }
 
-#qseojspvfh .gt_stub_row_group {
+#mjtpqstgaf .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1927,15 +1935,15 @@ example recovery becomes 7.11 (6.97 * 1.02).</p>
   vertical-align: top;
 }
 
-#qseojspvfh .gt_row_group_first td {
+#mjtpqstgaf .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#qseojspvfh .gt_row_group_first th {
+#mjtpqstgaf .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#qseojspvfh .gt_summary_row {
+#mjtpqstgaf .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1945,16 +1953,16 @@ example recovery becomes 7.11 (6.97 * 1.02).</p>
   padding-right: 5px;
 }
 
-#qseojspvfh .gt_first_summary_row {
+#mjtpqstgaf .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#qseojspvfh .gt_first_summary_row.thick {
+#mjtpqstgaf .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#qseojspvfh .gt_last_summary_row {
+#mjtpqstgaf .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1964,7 +1972,7 @@ example recovery becomes 7.11 (6.97 * 1.02).</p>
   border-bottom-color: #D3D3D3;
 }
 
-#qseojspvfh .gt_grand_summary_row {
+#mjtpqstgaf .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1974,7 +1982,7 @@ example recovery becomes 7.11 (6.97 * 1.02).</p>
   padding-right: 5px;
 }
 
-#qseojspvfh .gt_first_grand_summary_row {
+#mjtpqstgaf .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1984,7 +1992,7 @@ example recovery becomes 7.11 (6.97 * 1.02).</p>
   border-top-color: #D3D3D3;
 }
 
-#qseojspvfh .gt_last_grand_summary_row_top {
+#mjtpqstgaf .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1994,11 +2002,11 @@ example recovery becomes 7.11 (6.97 * 1.02).</p>
   border-bottom-color: #D3D3D3;
 }
 
-#qseojspvfh .gt_striped {
+#mjtpqstgaf .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#qseojspvfh .gt_table_body {
+#mjtpqstgaf .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2007,7 +2015,7 @@ example recovery becomes 7.11 (6.97 * 1.02).</p>
   border-bottom-color: #D3D3D3;
 }
 
-#qseojspvfh .gt_footnotes {
+#mjtpqstgaf .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2021,7 +2029,7 @@ example recovery becomes 7.11 (6.97 * 1.02).</p>
   border-right-color: #D3D3D3;
 }
 
-#qseojspvfh .gt_footnote {
+#mjtpqstgaf .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -2030,7 +2038,7 @@ example recovery becomes 7.11 (6.97 * 1.02).</p>
   padding-right: 5px;
 }
 
-#qseojspvfh .gt_sourcenotes {
+#mjtpqstgaf .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2044,7 +2052,7 @@ example recovery becomes 7.11 (6.97 * 1.02).</p>
   border-right-color: #D3D3D3;
 }
 
-#qseojspvfh .gt_sourcenote {
+#mjtpqstgaf .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -2052,64 +2060,73 @@ example recovery becomes 7.11 (6.97 * 1.02).</p>
   padding-right: 5px;
 }
 
-#qseojspvfh .gt_left {
+#mjtpqstgaf .gt_left {
   text-align: left;
 }
 
-#qseojspvfh .gt_center {
+#mjtpqstgaf .gt_center {
   text-align: center;
 }
 
-#qseojspvfh .gt_right {
+#mjtpqstgaf .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#qseojspvfh .gt_font_normal {
+#mjtpqstgaf .gt_font_normal {
   font-weight: normal;
 }
 
-#qseojspvfh .gt_font_bold {
+#mjtpqstgaf .gt_font_bold {
   font-weight: bold;
 }
 
-#qseojspvfh .gt_font_italic {
+#mjtpqstgaf .gt_font_italic {
   font-style: italic;
 }
 
-#qseojspvfh .gt_super {
+#mjtpqstgaf .gt_super {
   font-size: 65%;
 }
 
-#qseojspvfh .gt_footnote_marks {
+#mjtpqstgaf .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#qseojspvfh .gt_asterisk {
+#mjtpqstgaf .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#qseojspvfh .gt_indent_1 {
+#mjtpqstgaf .gt_indent_1 {
   text-indent: 5px;
 }
 
-#qseojspvfh .gt_indent_2 {
+#mjtpqstgaf .gt_indent_2 {
   text-indent: 10px;
 }
 
-#qseojspvfh .gt_indent_3 {
+#mjtpqstgaf .gt_indent_3 {
   text-indent: 15px;
 }
 
-#qseojspvfh .gt_indent_4 {
+#mjtpqstgaf .gt_indent_4 {
   text-indent: 20px;
 }
 
-#qseojspvfh .gt_indent_5 {
+#mjtpqstgaf .gt_indent_5 {
   text-indent: 25px;
+}
+
+#mjtpqstgaf .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#mjtpqstgaf div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
 }
 </style>
 <table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
@@ -2168,12 +2185,12 @@ $$</span></p>
 </div>
 <div id="estimating-sublegal-mortalities" class="section level3">
 <h3>Estimating Sublegal Mortalities</h3>
-<p><a href="https://framverse.github.io/fram_doc/calcs_glossary.html#Sublegal" target="_blank">Sublegal</a>
+<p><a href="https://framverse.github.io/fram_doc/calcs_glossary.html###Sublegal" target="_blank">Sublegal</a>
 or shaker mortalities result from the release of sublegal sized (below
 the minimum size limit) Chinook encountered during a fishery. First, the
 total number of sublegal encounters for the fishery-time step are
 calculated by taking the
-<a href="https://framverse.github.io/fram_doc/calcs_glossary.html#Legal-sized" target="_blank">legal</a>
+<a href="https://framverse.github.io/fram_doc/calcs_glossary.html###Legal-sized" target="_blank">legal</a>
 catch from the fishery-time step (found in the
 <a href="https://framverse.github.io/fram_doc/base_chin_doc_appendix.html#Base_Period_Marked_Catches" target="_blank"><code>BasePeriodCatch</code></a>
 table for marked and
@@ -2312,7 +2329,7 @@ href="#id_#SubRate">sublegal mortality</a> section below for additional
 details as to how this is calculated) and Chinook Non-Retention
 Mortality (CNR).</p>
 <div id="cohort-reconstruction-steps" class="section level4">
-<h4><a href="https://framverse.github.io/fram_doc/calcs_glossary.html#Cohort_Analysis" target="_blank">Cohort
+<h4><a href="https://framverse.github.io/fram_doc/calcs_glossary.html###Cohort_Analysis" target="_blank">Cohort
 Reconstruction</a> Steps</h4>
 <ul>
 <li>Compute terminal and preterminal mortalities for each stock by
@@ -2568,7 +2585,7 @@ TermCatch_{a,f,t} = MatCohort_{a,t} * LegalProp_{a,f,t} *
 AdjustedER_{a,f,t}\phantom{\frac{1}{1}}
 $$</span></p></li>
 <li><p>Compute escapement<br>
-<a href="https://framverse.github.io/fram_doc/calcs_glossary.html#Escapement" target="_blank">Escapement</a>
+<a href="https://framverse.github.io/fram_doc/calcs_glossary.html###Escapement" target="_blank">Escapement</a>
 is calculated by subtracting natural and fishery mortality from the
 mature cohort size. <br> Equationxxx <span class="math display">$$
 Escapement_{a,t} = MatCohort_{a,t} - \sum_f
