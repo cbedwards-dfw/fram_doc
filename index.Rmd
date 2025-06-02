@@ -11,6 +11,8 @@ editor_options:
   chunk_output_type: console
 ---
 
+TEST CHANGE
+
 # 1. Introduction
 
 ```{r buildnojekyll, echo=FALSE, warning=FALSE, message=FALSE, error=FALSE, results='hide'}
