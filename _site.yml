@@ -68,7 +68,7 @@ navbar:
         
 
 output:
-  quarto::html_document:
+  rmarkdown::html_document:
     theme: yeti
     number_sections: false
     toc: true
