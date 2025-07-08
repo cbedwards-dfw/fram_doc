@@ -38,6 +38,15 @@
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
 <link href="site_libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet" />
 <script src="site_libs/pagedtable-1.1/js/pagedtable.js"></script>
+<link href="site_libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet" />
+<script src="site_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+<script src="site_libs/d3-3.3.8/d3.min.js"></script>
+<script src="site_libs/dagre-0.4.0/dagre-d3.min.js"></script>
+<link href="site_libs/mermaid-0.3.0/dist/mermaid.css" rel="stylesheet" />
+<script src="site_libs/mermaid-0.3.0/dist/mermaid.slim.min.js"></script>
+<link href="site_libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
+<script src="site_libs/chromatography-0.1/chromatography.js"></script>
+<script src="site_libs/DiagrammeR-binding-1.0.11/DiagrammeR.js"></script>
 <link href="site_libs/font-awesome-6.4.2/css/all.min.css" rel="stylesheet" />
 <link href="site_libs/font-awesome-6.4.2/css/v4-shims.min.css" rel="stylesheet" />
 
@@ -465,14 +474,14 @@ div.tocify {
 <h1>1. Introduction</h1>
 <p><img src="images/fvs_welcome.png" width="90%" /></p>
 <p>The Fishery Regulation Assessment Model
-(<a href = "https://framverse.github.io/fram_doc/calcs_glossary.html###Fishery_Regulation_Assessment_Model_(FRAM)" target = "_blank" title = "FRAM: Fishery Regulation Assessment Model">FRAM</a>)
+(<a href = "https://framverse.github.io/fram_doc/calcs_glossary.html#Fishery_Regulation_Assessment_Model_(FRAM)" target = "_blank" title = "FRAM: Fishery Regulation Assessment Model">FRAM</a>)
 is an accounting tool for estimating the impacts of proposed fisheries
 on
 <a href = "https://en.wikipedia.org/wiki/Chinook_salmon" target="_blank">Chinook</a>
 (<em>Oncorhynchus tshawytscha</em>) and
 <a href = "https://en.wikipedia.org/wiki/Coho_salmon" target="_blank">Coho</a>
 (<em>Oncorhynchus kisutch</em>) salmon
-<a href = "https://framverse.github.io/fram_doc/calcs_glossary.html###Stock" target = "_blank" title = "Stock">stocks</a>
+<a href = "https://framverse.github.io/fram_doc/calcs_glossary.html#Stock" target = "_blank" title = "Stock">stocks</a>
 during a fishing season. <span
 title="FRAM: Fishery Regulation Assessment Model">FRAM</span> is a
 software program developed and used by:</p>
@@ -502,7 +511,7 @@ title="FRAM: Fishery Regulation Assessment Model">FRAM</span> results
 are used to examine the impacts of proposed fisheries within a single
 management year for compliance with management objectives, allocation
 arrangements, Endangered Species Act
-(<a href = "https://framverse.github.io/fram_doc/calcs_glossary.html###Endangered_Species_Act_(ESA)" target = "_blank" title = "ESA: Endangered species act">ESA</a>)
+(<a href = "https://framverse.github.io/fram_doc/calcs_glossary.html#Endangered_Species_Act_(ESA)" target = "_blank" title = "ESA: Endangered species act">ESA</a>)
 requirements, and domestic and international legal obligations.</p>
 <p>This site includes <span
 title="FRAM: Fishery Regulation Assessment Model">FRAM</span> model
@@ -520,37 +529,37 @@ use of the model.</p>
 <p><a href="https://notthis" class="uri">https://notthis</a></p>
 <p><span title="FRAM: Fishery Regulation Assessment Model">FRAM</span>
 is a
-<a href = "https://framverse.github.io/fram_doc/calcs_glossary.html###Deterministic_Model" target = "_blank" title = "Deterministic model">deterministic</a>,
-<a href = "https://framverse.github.io/fram_doc/calcs_glossary.html###Discrete_Model" target = "_blank" title = "Discrete model">discrete</a>,
+<a href = "https://framverse.github.io/fram_doc/calcs_glossary.html#Deterministic_Model" target = "_blank" title = "Deterministic model">deterministic</a>,
+<a href = "https://framverse.github.io/fram_doc/calcs_glossary.html#Discrete_Model" target = "_blank" title = "Discrete model">discrete</a>,
 time-age structured model that aids in the planning of Chinook and Coho
 salmon fisheries. It is designed to address the effects of multiple
 mixed-stock fisheries on individual stocks, each further stratified by
 age and mark status (and possibly
-<a href = "https://framverse.github.io/fram_doc/calcs_glossary.html###Hatchery" target = "_blank" title = "Hatchery">hatchery</a>
+<a href = "https://framverse.github.io/fram_doc/calcs_glossary.html#Hatchery" target = "_blank" title = "Hatchery">hatchery</a>
 origin). Individual stock-age groups are exploited as a single pool.
 That is, in each time step all pre-terminal fisheries operate on the
 entire cohort simultaneously. The model calculates natural mortality and
 fishery related mortality, including catches and
-<a href = "https://framverse.github.io/fram_doc/calcs_glossary.html###Non-landedNon-retention_Mortality" target = "_blank" title = "Non-landed mortality">non-landed</a>
+<a href = "https://framverse.github.io/fram_doc/calcs_glossary.html#Non-landedNon-retention_Mortality" target = "_blank" title = "Non-landed mortality">non-landed</a>
 impacts, imposed on the abundance of each stock unit.</p>
 <p>In a given yearly model run, over the course of several
-<a href = "https://framverse.github.io/fram_doc/calcs_glossary.html###Time_Step" target = "_blank" title = "Time step">time
+<a href = "https://framverse.github.io/fram_doc/calcs_glossary.html#Time_Step" target = "_blank" title = "Time step">time
 steps</a>, <span
 title="FRAM: Fishery Regulation Assessment Model">FRAM</span> allocates
 a mixed stock cohort to catches, non-retention mortality and
-<a href = "https://framverse.github.io/fram_doc/calcs_glossary.html###Escapement" target = "_blank" title = "Escapement">escapement</a>.
+<a href = "https://framverse.github.io/fram_doc/calcs_glossary.html#Escapement" target = "_blank" title = "Escapement">escapement</a>.
 This occurs by combining stock-specific run sizes and fishery inputs
 with
-<a href = "https://framverse.github.io/fram_doc/calcs_glossary.html###Parameter" target = "_blank" title = "Parameter">parameters</a>
-<a href = "https://framverse.github.io/fram_doc/calcs_glossary.html###Calibration" target = "_blank" target = "Calibration">calibrated</a>
+<a href = "https://framverse.github.io/fram_doc/calcs_glossary.html#Parameter" target = "_blank" title = "Parameter">parameters</a>
+<a href = "https://framverse.github.io/fram_doc/calcs_glossary.html#Calibration" target = "_blank" target = "Calibration">calibrated</a>
 from observations made during a fixed
-“<a href = "https://framverse.github.io/fram_doc/calcs_glossary.html###Base_Period" target = "_blank" title = "Base period">base
+“<a href = "https://framverse.github.io/fram_doc/calcs_glossary.html#Base_Period" target = "_blank" title = "Base period">base
 period</a>” (set of baseline years). The base period integrates fishery
 catches, stock age and mark composition information, and coded wire tag
-(<a href = "https://framverse.github.io/fram_doc/calcs_glossary.html###Coded-Wire_Tag_(CWT)" target = "_blank" title = "CWT: Coded-wire tag">CWT</a>)
+(<a href = "https://framverse.github.io/fram_doc/calcs_glossary.html#Coded-Wire_Tag_(CWT)" target = "_blank" title = "CWT: Coded-wire tag">CWT</a>)
 recovery data to produce a calibrated reference pattern of stock
 distributions and stock-specific
-<a href = "https://framverse.github.io/fram_doc/calcs_glossary.html###Harvest_Rate_(HR)" target = "_blank" title = "HR: Harvest rate">harvest
+<a href = "https://framverse.github.io/fram_doc/calcs_glossary.html#Harvest_Rate_(HR)" target = "_blank" title = "HR: Harvest rate">harvest
 rates</a> by time-step and fishery.</p>
 <p>A fundamental element of <span
 title="FRAM: Fishery Regulation Assessment Model">FRAM</span>
@@ -570,17 +579,17 @@ capture changing management options, and the development platform of the
 application has evolved, but the basic structure remains much the same
 as when it was conceived in the late 1970’s.</p>
 <p>In the mid-1970s,
-<a href = "https://framverse.github.io/fram_doc/calcs_glossary.html###Treaty_Fisheries" target = "_blank" title = "Treaty fishery">treaty
+<a href = "https://framverse.github.io/fram_doc/calcs_glossary.html#Treaty_Fisheries" target = "_blank" title = "Treaty fishery">treaty
 fishery</a> rights litigation and the associated legal obligation for
 the states of Washington and Oregon to provide
-<a href = "https://framverse.github.io/fram_doc/calcs_glossary.html###Treaty_Tribes" target = "_blank" title = "Treaty Tribes">Treaty
+<a href = "https://framverse.github.io/fram_doc/calcs_glossary.html#Treaty_Tribes" target = "_blank" title = "Treaty Tribes">Treaty
 Tribes</a> with the opportunity to harvest specific shares of individual
 runs, introduced a need for a quantitative tool to project the impact of
 proposed salmon fisheries at the stock-specific level. Other legal
 issues, such as the
-<a href = "https://framverse.github.io/fram_doc/calcs_glossary.html###Magnuson-Stevens_Fishery_Conservation_and_Management_Act" target = "_blank" title = "Magnuson-Stevens Fishery Conservation and Management Act">Magnuson-Stevens
+<a href = "https://framverse.github.io/fram_doc/calcs_glossary.html#Magnuson-Stevens_Fishery_Conservation_and_Management_Act" target = "_blank" title = "Magnuson-Stevens Fishery Conservation and Management Act">Magnuson-Stevens
 Fishery Conservation and Management Act</a> and the
-<a href = "https://framverse.github.io/fram_doc/calcs_glossary.html###Law_of_the_Sea_Convention" target = "_blank" title = "Law of the Sea Convention">Law
+<a href = "https://framverse.github.io/fram_doc/calcs_glossary.html#Law_of_the_Sea_Convention" target = "_blank" title = "Law of the Sea Convention">Law
 of the Seas convention</a>, contributed to the need to improve
 assessment tools. These considerations provided the impetus to develop
 early salmon fishery assessment models using the information available
@@ -589,7 +598,7 @@ program.</p>
 <p>In the late 1970s, the Washington Department of Fisheries (<span
 title="WDF: Washington Department of Fisheries">WDF</span>) and U.S.
 National Bureau of Standards
-(<a href = "https://framverse.github.io/fram_doc/calcs_glossary.html###US_National_Bureau_of_Standards" target = "_blank" title = "NBS: U.S. National Bureau of Standards">NBS</a>)
+(<a href = "https://framverse.github.io/fram_doc/calcs_glossary.html#US_National_Bureau_of_Standards" target = "_blank" title = "NBS: U.S. National Bureau of Standards">NBS</a>)
 developed a model for evaluating alternative fishery regulatory packages
 that was coded in FORTRAN and ran on a mainframe computer at the
 University of Washington. The <span
@@ -600,7 +609,7 @@ files. This <span
 title="WDF: Washington Department of Fisheries">WDF</span>/<span
 title="NBS: U.S. National Bureau of Standard">NBS</span> model was not
 extensively used by the
-<a href = "https://framverse.github.io/fram_doc/calcs_glossary.html###Pacific_Fishery_Management_Council_(PFMC)" target = "_blank" title = "PFMC: Pacific Fishery Management Council">PFMC</a>
+<a href = "https://framverse.github.io/fram_doc/calcs_glossary.html#Pacific_Fishery_Management_Council_(PFMC)" target = "_blank" title = "PFMC: Pacific Fishery Management Council">PFMC</a>
 because it proved costly to operate and results were difficult to obtain
 in a timely manner.
 <a href = "https://framverse.github.io/fram_doc/calcs_citations.html#Literature_cited" target = "_blank" title = "Morishima and Henry (2000)">Morishima
@@ -622,9 +631,9 @@ from the Columbia River, Puget Sound, and Washington and Oregon coastal
 areas. The <span title="CAM: Coho Assessment Model">CAM</span> was
 revised over time, principally to improve report generation capabilities
 and provide more detailed information for managing
-<a href = "https://framverse.github.io/fram_doc/calcs_glossary.html###Terminal_Fishery" target = "_blank" title = "Terminal fishery">terminal
+<a href = "https://framverse.github.io/fram_doc/calcs_glossary.html#Terminal_Fishery" target = "_blank" title = "Terminal fishery">terminal
 area fisheries</a> in Puget Sound using Terminal Area Management Modules
-(<a href = "https://framverse.github.io/fram_doc/calcs_glossary.html###Terminal_Area_Management_Module_(TAMM)" target = "_blank" title = "TAMM: Terminal Area Management Module">TAMMs</a>).
+(<a href = "https://framverse.github.io/fram_doc/calcs_glossary.html#Terminal_Area_Management_Module_(TAMM)" target = "_blank" title = "TAMM: Terminal Area Management Module">TAMMs</a>).
 The <span title="CAM: Coho Assessment Model">CAM</span> was used as the
 primary model for evaluating Coho impacts for proposed <span
 title="PFMC: Pacific Fishery Management Council">PFMC</span> fisheries
@@ -660,16 +669,16 @@ software changes were implemented when an updated Chinook base period
 was adopted using brood year 2005-2008 <span
 title="CWT: Coded Wire Tag">CWTs</span>. Substantial changes were made
 to the calibration programs, modeling of
-<a href = "https://framverse.github.io/fram_doc/calcs_glossary.html###Sublegal" target = "_blank" title = "Sublegal">sublegal</a>
-<a href = "https://framverse.github.io/fram_doc/calcs_glossary.html###Encounter" target = "_blank" title = "Encounter">encounters</a>,
+<a href = "https://framverse.github.io/fram_doc/calcs_glossary.html#Sublegal" target = "_blank" title = "Sublegal">sublegal</a>
+<a href = "https://framverse.github.io/fram_doc/calcs_glossary.html#Encounter" target = "_blank" title = "Encounter">encounters</a>,
 growth estimation,
-<a href = "https://framverse.github.io/fram_doc/calcs_glossary.html###Impute" target = "_blank" title = "Impute">imputing</a>
+<a href = "https://framverse.github.io/fram_doc/calcs_glossary.html#Impute" target = "_blank" title = "Impute">imputing</a>
 <span title="CWT: Coded Wire Tag">CWT</span> recoveries for stocks and
 fisheries with few or no <span title="CWT: Coded Wire Tag">CWTs</span>,
 handling
-<a href = "https://framverse.github.io/fram_doc/calcs_glossary.html###Mark-selective_Fishery_(MSF)" target = "_blank" title = "MSF: Mark-selective fishery">mark-selective
+<a href = "https://framverse.github.io/fram_doc/calcs_glossary.html#Mark-selective_Fishery_(MSF)" target = "_blank" title = "MSF: Mark-selective fishery">mark-selective
 fisheries</a>, and developing
-<a href = "https://framverse.github.io/fram_doc/calcs_glossary.html###Model-Stock_Proportion_(MSP)" target = "_blank" title = "MSP: Model-stock proportion">model
+<a href = "https://framverse.github.io/fram_doc/calcs_glossary.html#Model-Stock_Proportion_(MSP)" target = "_blank" title = "MSP: Model-stock proportion">model
 stock proportions</a>.</p>
 <p>Although some program subroutines are shared, Chinook and Coho are
 processed separately, with distinct time step divisions, stocks, and
@@ -694,10 +703,29 @@ class="section level1 unnumbered">
 title="FRAM: Fishery Regulation Assessment Model">FRAM</span>
 Interactions with Other Models</h1>
 <p><img src="images/FRAM_model_interactions.PNG" width="100%" /></p>
+<pre class="r"><code>library(DiagrammeR)</code></pre>
+<pre><code>## Warning: package &#39;DiagrammeR&#39; was built under R version 4.4.3</code></pre>
+<pre class="r"><code>mermaid(&quot;
+flowchart TD
+    A[Cohort] --&gt;|Natural Mortality| B(Preterminal fisheries)
+    B --&gt; |Preterminal Fishery Mortalities| C{Maturation}
+    C --&gt;|Mature Cohort| D[Terminal Fisheries]
+    C --&gt;|Immature cohort. Increment timestep| A
+    D --&gt; |Terminal Fishery Mortality| E(Escapement)
+    &quot;)</code></pre>
+<div class="DiagrammeR html-widget html-fill-item" id="htmlwidget-5ab1bdf8d9125c4725e5" style="width:672px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-5ab1bdf8d9125c4725e5">{"x":{"diagram":"\nflowchart TD\n    A[Cohort] -->|Natural Mortality| B(Preterminal fisheries)\n    B --> |Preterminal Fishery Mortalities| C{Maturation}\n    C -->|Mature Cohort| D[Terminal Fisheries]\n    C -->|Immature cohort. Increment timestep| A\n    D --> |Terminal Fishery Mortality| E(Escapement)\n    "},"evals":[],"jsHooks":[]}</script>
+<pre class="r"><code>library(DiagrammeR)
+mermaid(&quot;
+graph LR
+    A--&gt;B
+&quot;)</code></pre>
+<div class="DiagrammeR html-widget html-fill-item" id="htmlwidget-dbfb55c5214484687832" style="width:672px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-dbfb55c5214484687832">{"x":{"diagram":"\ngraph LR\n    A-->B\n"},"evals":[],"jsHooks":[]}</script>
 <p>Figure 1. Simplified interactions between the Base Period, <span
 title="FRAM: Fishery Regulation Assessment Model">FRAM</span>, and <span
 title="TAMM: Terminal Area Management Module">TAMM</span>
-(<a href = "https://framverse.github.io/fram_doc/calcs_glossary.html###Terminal_Run_Size" target = "_blank" title = "TRS: Terminal run size">TRS</a>:
+(<a href = "https://framverse.github.io/fram_doc/calcs_glossary.html#Terminal_Run_Size" target = "_blank" title = "TRS: Terminal run size">TRS</a>:
 Terminal Run Size, BPER: Base Period Exploitation Rates)</p>
 <div id="terminal-area-management-module-tamm"
 class="section level2 unnumbered">
@@ -769,7 +797,7 @@ program</a> maps the <span title="CWT: Coded Wire Tag">CWTs</span> to
 fisheries, stocks, and time steps and conducts a cohort reconstruction
 to estimate base period exploitation rates and other parameters, such as
 base period
-<a href = "https://framverse.github.io/fram_doc/calcs_glossary.html###Cohort_Size" target = "_blank" title = "Cohort size">cohort
+<a href = "https://framverse.github.io/fram_doc/calcs_glossary.html#Cohort_Size" target = "_blank" title = "Cohort size">cohort
 sizes</a>. These estimates form the basis of a <span
 title="FRAM: Fishery Regulation Assessment Model">FRAM</span> run and
 remain static between model runs. Using these base period parameters
@@ -792,23 +820,23 @@ there are a variety of unique features specific to each species that can
 be difficult to differentiate when they are presented together.</p>
 <p>Table 1. Differences between Chinook and Coho <span
 title="FRAM: Fishery Regulation Assessment Model">FRAM</span></p>
-<div id="xzugljrvbt" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#xzugljrvbt table {
+<div id="jdhzeomimn" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#jdhzeomimn table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#xzugljrvbt thead, #xzugljrvbt tbody, #xzugljrvbt tfoot, #xzugljrvbt tr, #xzugljrvbt td, #xzugljrvbt th {
+#jdhzeomimn thead, #jdhzeomimn tbody, #jdhzeomimn tfoot, #jdhzeomimn tr, #jdhzeomimn td, #jdhzeomimn th {
   border-style: none;
 }
 
-#xzugljrvbt p {
+#jdhzeomimn p {
   margin: 0;
   padding: 0;
 }
 
-#xzugljrvbt .gt_table {
+#jdhzeomimn .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -834,12 +862,12 @@ title="FRAM: Fishery Regulation Assessment Model">FRAM</span></p>
   border-left-color: #D3D3D3;
 }
 
-#xzugljrvbt .gt_caption {
+#jdhzeomimn .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#xzugljrvbt .gt_title {
+#jdhzeomimn .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -851,7 +879,7 @@ title="FRAM: Fishery Regulation Assessment Model">FRAM</span></p>
   border-bottom-width: 0;
 }
 
-#xzugljrvbt .gt_subtitle {
+#jdhzeomimn .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -863,7 +891,7 @@ title="FRAM: Fishery Regulation Assessment Model">FRAM</span></p>
   border-top-width: 0;
 }
 
-#xzugljrvbt .gt_heading {
+#jdhzeomimn .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -875,13 +903,13 @@ title="FRAM: Fishery Regulation Assessment Model">FRAM</span></p>
   border-right-color: #D3D3D3;
 }
 
-#xzugljrvbt .gt_bottom_border {
+#jdhzeomimn .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#xzugljrvbt .gt_col_headings {
+#jdhzeomimn .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -896,7 +924,7 @@ title="FRAM: Fishery Regulation Assessment Model">FRAM</span></p>
   border-right-color: #D3D3D3;
 }
 
-#xzugljrvbt .gt_col_heading {
+#jdhzeomimn .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -916,7 +944,7 @@ title="FRAM: Fishery Regulation Assessment Model">FRAM</span></p>
   overflow-x: hidden;
 }
 
-#xzugljrvbt .gt_column_spanner_outer {
+#jdhzeomimn .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -928,15 +956,15 @@ title="FRAM: Fishery Regulation Assessment Model">FRAM</span></p>
   padding-right: 4px;
 }
 
-#xzugljrvbt .gt_column_spanner_outer:first-child {
+#jdhzeomimn .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#xzugljrvbt .gt_column_spanner_outer:last-child {
+#jdhzeomimn .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#xzugljrvbt .gt_column_spanner {
+#jdhzeomimn .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -948,11 +976,11 @@ title="FRAM: Fishery Regulation Assessment Model">FRAM</span></p>
   width: 100%;
 }
 
-#xzugljrvbt .gt_spanner_row {
+#jdhzeomimn .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#xzugljrvbt .gt_group_heading {
+#jdhzeomimn .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -978,7 +1006,7 @@ title="FRAM: Fishery Regulation Assessment Model">FRAM</span></p>
   text-align: left;
 }
 
-#xzugljrvbt .gt_empty_group_heading {
+#jdhzeomimn .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -993,15 +1021,15 @@ title="FRAM: Fishery Regulation Assessment Model">FRAM</span></p>
   vertical-align: middle;
 }
 
-#xzugljrvbt .gt_from_md > :first-child {
+#jdhzeomimn .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#xzugljrvbt .gt_from_md > :last-child {
+#jdhzeomimn .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#xzugljrvbt .gt_row {
+#jdhzeomimn .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1020,7 +1048,7 @@ title="FRAM: Fishery Regulation Assessment Model">FRAM</span></p>
   overflow-x: hidden;
 }
 
-#xzugljrvbt .gt_stub {
+#jdhzeomimn .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1033,7 +1061,7 @@ title="FRAM: Fishery Regulation Assessment Model">FRAM</span></p>
   padding-right: 5px;
 }
 
-#xzugljrvbt .gt_stub_row_group {
+#jdhzeomimn .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1047,15 +1075,15 @@ title="FRAM: Fishery Regulation Assessment Model">FRAM</span></p>
   vertical-align: top;
 }
 
-#xzugljrvbt .gt_row_group_first td {
+#jdhzeomimn .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#xzugljrvbt .gt_row_group_first th {
+#jdhzeomimn .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#xzugljrvbt .gt_summary_row {
+#jdhzeomimn .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1065,16 +1093,16 @@ title="FRAM: Fishery Regulation Assessment Model">FRAM</span></p>
   padding-right: 5px;
 }
 
-#xzugljrvbt .gt_first_summary_row {
+#jdhzeomimn .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#xzugljrvbt .gt_first_summary_row.thick {
+#jdhzeomimn .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#xzugljrvbt .gt_last_summary_row {
+#jdhzeomimn .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1084,7 +1112,7 @@ title="FRAM: Fishery Regulation Assessment Model">FRAM</span></p>
   border-bottom-color: #D3D3D3;
 }
 
-#xzugljrvbt .gt_grand_summary_row {
+#jdhzeomimn .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1094,7 +1122,7 @@ title="FRAM: Fishery Regulation Assessment Model">FRAM</span></p>
   padding-right: 5px;
 }
 
-#xzugljrvbt .gt_first_grand_summary_row {
+#jdhzeomimn .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1104,7 +1132,7 @@ title="FRAM: Fishery Regulation Assessment Model">FRAM</span></p>
   border-top-color: #D3D3D3;
 }
 
-#xzugljrvbt .gt_last_grand_summary_row_top {
+#jdhzeomimn .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1114,11 +1142,11 @@ title="FRAM: Fishery Regulation Assessment Model">FRAM</span></p>
   border-bottom-color: #D3D3D3;
 }
 
-#xzugljrvbt .gt_striped {
+#jdhzeomimn .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#xzugljrvbt .gt_table_body {
+#jdhzeomimn .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1127,7 +1155,7 @@ title="FRAM: Fishery Regulation Assessment Model">FRAM</span></p>
   border-bottom-color: #D3D3D3;
 }
 
-#xzugljrvbt .gt_footnotes {
+#jdhzeomimn .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1141,7 +1169,7 @@ title="FRAM: Fishery Regulation Assessment Model">FRAM</span></p>
   border-right-color: #D3D3D3;
 }
 
-#xzugljrvbt .gt_footnote {
+#jdhzeomimn .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1150,7 +1178,7 @@ title="FRAM: Fishery Regulation Assessment Model">FRAM</span></p>
   padding-right: 5px;
 }
 
-#xzugljrvbt .gt_sourcenotes {
+#jdhzeomimn .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1164,7 +1192,7 @@ title="FRAM: Fishery Regulation Assessment Model">FRAM</span></p>
   border-right-color: #D3D3D3;
 }
 
-#xzugljrvbt .gt_sourcenote {
+#jdhzeomimn .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1172,72 +1200,72 @@ title="FRAM: Fishery Regulation Assessment Model">FRAM</span></p>
   padding-right: 5px;
 }
 
-#xzugljrvbt .gt_left {
+#jdhzeomimn .gt_left {
   text-align: left;
 }
 
-#xzugljrvbt .gt_center {
+#jdhzeomimn .gt_center {
   text-align: center;
 }
 
-#xzugljrvbt .gt_right {
+#jdhzeomimn .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#xzugljrvbt .gt_font_normal {
+#jdhzeomimn .gt_font_normal {
   font-weight: normal;
 }
 
-#xzugljrvbt .gt_font_bold {
+#jdhzeomimn .gt_font_bold {
   font-weight: bold;
 }
 
-#xzugljrvbt .gt_font_italic {
+#jdhzeomimn .gt_font_italic {
   font-style: italic;
 }
 
-#xzugljrvbt .gt_super {
+#jdhzeomimn .gt_super {
   font-size: 65%;
 }
 
-#xzugljrvbt .gt_footnote_marks {
+#jdhzeomimn .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#xzugljrvbt .gt_asterisk {
+#jdhzeomimn .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#xzugljrvbt .gt_indent_1 {
+#jdhzeomimn .gt_indent_1 {
   text-indent: 5px;
 }
 
-#xzugljrvbt .gt_indent_2 {
+#jdhzeomimn .gt_indent_2 {
   text-indent: 10px;
 }
 
-#xzugljrvbt .gt_indent_3 {
+#jdhzeomimn .gt_indent_3 {
   text-indent: 15px;
 }
 
-#xzugljrvbt .gt_indent_4 {
+#jdhzeomimn .gt_indent_4 {
   text-indent: 20px;
 }
 
-#xzugljrvbt .gt_indent_5 {
+#jdhzeomimn .gt_indent_5 {
   text-indent: 25px;
 }
 
-#xzugljrvbt .katex-display {
+#jdhzeomimn .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#xzugljrvbt div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#jdhzeomimn div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -1316,7 +1344,7 @@ title="FRAM: Fishery Regulation Assessment Model">FRAM</span></p>
 <p><strong>To cite this page:</strong> <br> Salmon modeling and analysis
 workgroup. 2025. FRAM Overview <em>in</em> FRAM Documentation. <a
 href="https://framverse.github.io/fram_doc/"
-class="uri">https://framverse.github.io/fram_doc/</a> built June 02,
+class="uri">https://framverse.github.io/fram_doc/</a> built July 07,
 2025.</p>
 <p><br></p>
 <div id="previous-documentation" class="section level4">
